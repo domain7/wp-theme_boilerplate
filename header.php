@@ -8,13 +8,13 @@
 
 	<title><?php document_title(); ?></title>
 
-	<meta name="description" content="<?php bloginfo('description') ?>">	
+	<meta name="description" content="<?php bloginfo('description') ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico">
+	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico?ver=2">
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo get_bloginfo('rss2_url'); ?>" />
 
 	<?php wp_head(); ?>
