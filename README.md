@@ -53,3 +53,15 @@ The plugin boilerplate contains custom post types, taxonomies, and ACF field fil
 * Rename sitename.php file to the same name as your theme.
 * Open sitename.php file and replace all instances of `SITE NAME` and `sitename` with the same name as your theme.
 * In wordpress admin, go to plugins, and activate the plugin.
+
+## Extra - Install plugins like a boss with WP CLI
+
+If you're like me, you probably have some handy plugins you use on every project. If you have WP CLI installed, you can install those plugins quickly through the command line:
+
+```
+wp plugin install codepress-admin-columns --activate
+wp plugin install advanced-custom-fields --activate
+wp plugin install intuitive-custom-post-order --activate
+wp plugin install regenerate-thumbnails --activate
+wp plugin install wordpress-importer --activate
+```
