@@ -37,7 +37,8 @@ Follow these steps to set up a shiney new Wordpress theme, complete with sassypl
 * Go into package.json and customize the top area with project specific information. The name you enter will be the name of your compiled js file in /js/build/
 * Open the includes/scripts.php file, and on line 40, change the location of jQuery script (in gruntyplate its js/src/vendor/jquery-2.0.0.min.js)
 * Also in includes/scripts.php, and on line 85, change the reference to /js/main.js to the project script file (in this case, /js/build/enterpriseonline.min.js)
-* In terminal, navigate to the theme directory and run grunt watch. Save '/js/src/app.js' and 'stylesheets/scss/screen.scss' to generate compiled js and css files (Gruntyplate will compile SASS files, no need to run Compass watch. Thanks Reuben)
+* In terminal, navigate to the theme directory and run `npm install`.
+* In terminal, run `grunt` to generate compiled js and css files (Gruntyplate will compile SASS files, no need to run Compass watch. Thanks Reuben)
 
 ##### Activate Theme
 In wordpress admin, go to appearance / themes and activate your new wordpress theme.
@@ -48,6 +49,7 @@ The plugin boilerplate contains custom post types, taxonomies, and ACF field fil
 
 * Navigate to plugins folder of your WP install and clone in the wp plugin boilerplate ( git@bitbucket.org:domain7/wp-plugin_boilerplate.git )
 * Delete the .git directory and .gitignore file
-* Rename the wp-plugin_boilerplate directory to a name specific to your project.
-* Open site_boilerplate.php file and customize info for this theme.
+* Rename the wp-plugin_boilerplate directory to the same name as your theme.
+* Rename sitename.php file to the same name as your theme.
+* Open sitename.php file and replace all instances of `SITE NAME` and `sitename` with the same name as your theme.
 * In wordpress admin, go to plugins, and activate the plugin.
