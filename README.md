@@ -37,8 +37,6 @@ Follow these steps to set up a shiney new Wordpress theme, complete with sassypl
 * Go into package.json and customize the top area with project specific information. The name you enter will be the name of your compiled js file in /js/build/
 * Open the includes/scripts.php file, and on line 40, change the location of jQuery script (in gruntyplate its js/src/vendor/jquery-2.0.0.min.js)
 * Also in includes/scripts.php, and on line 85, change the reference to /js/main.js to the project script file (in this case, /js/build/enterpriseonline.min.js)
-* In terminal, navigate to the theme directory and run `npm install`.
-* In terminal, run `grunt` to generate compiled js and css files (Gruntyplate will compile SASS files, no need to run Compass watch. Thanks Reuben)
 
 ##### Activate Theme
 In wordpress admin, go to appearance / themes and activate your new wordpress theme.
@@ -59,9 +57,6 @@ The plugin boilerplate contains custom post types, taxonomies, and ACF field fil
 If you're like me, you probably have some handy plugins you use on every project. If you have WP CLI installed, you can install those plugins quickly through the command line:
 
 ```
-wp plugin install codepress-admin-columns --activate
 wp plugin install advanced-custom-fields --activate
-wp plugin install intuitive-custom-post-order --activate
 wp plugin install regenerate-thumbnails --activate
-wp plugin install wordpress-importer --activate
 ```
