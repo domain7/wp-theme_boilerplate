@@ -7,6 +7,7 @@ include_once 'includes/bodyclass.php'; // Add page slug as body class. Also incl
 include_once 'includes/menus.php';
 include_once 'includes/image_sizes.php';
 include_once 'includes/sidebars.php';
+include_once 'includes/cpt_archives.php';
 
 // Template functions
 require_once 'includes/template_functions/custom_excerpt.php';
