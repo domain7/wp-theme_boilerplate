@@ -8,10 +8,10 @@
 	function excerpt($limit, $id) {
 
 		if ( has_excerpt($id) ) {
-			return get_post_field('post_excerpt', $id);
+			$content = get_post_field('post_excerpt', $id);
+		} else {
+			$content = get_post_field('post_content', $id);
 		}
-
-		$content = get_post_field('post_content', $id);
 
 		$excerpt = explode(' ', $content, $limit);
 
@@ -59,6 +59,3 @@
 		}
 
 	}
-
-?>
-
