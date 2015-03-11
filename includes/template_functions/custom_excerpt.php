@@ -7,19 +7,26 @@
 	// excerpt() generates the excerpt portion of what gets printed in the template
 	function excerpt($limit, $id) {
 
-		  $content = get_post_field('post_content', $id);
+		if ( has_excerpt($id) ) {
+			return get_post_field('post_excerpt', $id);
+		}
 
-	      $excerpt = explode(' ', $content, $limit);
-	      if (count($excerpt)>=$limit) {
-	        array_pop($excerpt);
-	        $excerpt = implode(" ",$excerpt).'...';
-	      } else {
-	        $excerpt = implode(" ",$excerpt);
-	      }
-	      $excerpt = preg_replace('`\[[^\]]*]`','',$excerpt);
-	      $excerpt = preg_replace("/<img(.*?)>/si", "", $excerpt);
-	      $excerpt = preg_replace("/<em(.*?)>/si", "", $excerpt);
-	  	  return $excerpt;preg_replace('`\[[^\]]*]`','',$excerpt);
+		$content = get_post_field('post_content', $id);
+
+		$excerpt = explode(' ', $content, $limit);
+
+		if (count($excerpt)>=$limit) {
+			array_pop($excerpt);
+			$excerpt = implode(" ",$excerpt).'...';
+		} else {
+			$excerpt = implode(" ",$excerpt);
+		}
+
+		$excerpt = preg_replace('`\[[^\]]*]`','',$excerpt);
+		$excerpt = preg_replace("/<img(.*?)>/si", "", $excerpt);
+		$excerpt = preg_replace("/<em(.*?)>/si", "", $excerpt);
+
+		return $excerpt;preg_replace('`\[[^\]]*]`','',$excerpt);
 
 	}
 
@@ -54,3 +61,4 @@
 	}
 
 ?>
+
