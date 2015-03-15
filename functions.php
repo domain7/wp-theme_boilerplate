@@ -8,6 +8,7 @@ include_once 'includes/menus.php';
 include_once 'includes/image_sizes.php';
 include_once 'includes/sidebars.php';
 include_once 'includes/cpt_archives.php';
+include_once 'includes/login_page.php';
 
 // Template functions
 require_once 'includes/template_functions/custom_excerpt.php';
