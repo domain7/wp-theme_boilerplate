@@ -12,6 +12,11 @@
 
 				if ( have_posts() ) :
 
+					// For listings, add a but of markup
+					if ( is_archive() || is_search() ) {
+						echo '<div class="listing">';
+					}
+
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -32,6 +37,11 @@
 						}
 
 					endwhile;
+
+					// For listings, add a but of markup
+					if ( is_archive() || is_search() ) {
+						echo '</div>';
+					}
 
 					// Pagination
 					get_template_part('partials/pagination');

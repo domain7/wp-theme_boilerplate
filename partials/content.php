@@ -8,7 +8,7 @@
 
 	</header>
 
-	<div class="entry-content">
+	<div class="post-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-summary -->
 
