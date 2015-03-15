@@ -41,5 +41,3 @@
 	function document_title() {
 		echo get_document_title();
 	}
-
-?>

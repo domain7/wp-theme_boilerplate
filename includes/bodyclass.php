@@ -41,5 +41,3 @@ function expand_body_classes($classes, $class='') {
 
 	return $classes;// return the $classes array
 }
-
-?>

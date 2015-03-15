@@ -22,5 +22,3 @@ function d7_register_sidebars() {
 		)
 	);
 }
-
-?>

@@ -32,22 +32,22 @@ function wps_enqueue_jquery() {
 	$protocol = ( isset( $_SERVER['HTTPS'] ) && 'on' == $_SERVER['HTTPS'] ) ? 'https' : 'http';
 	// Get Latest Version
 	$url = $protocol . '://code.jquery.com/jquery-1.11.1.min.js';
-	
+
 	// Get Specific Version
 	//$url      = $protocol . '://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js';
-	
+
 	// Setup WordPress URI
 	$wpurl =  get_bloginfo('template_directory') . '/js/jquery-1.11.1.min.js';
 
 	// Setup version
 	$ver = null;
-	
+
 	// Deregister WordPress default jQuery
 	wp_deregister_script( 'jquery' );
-	
+
 	// Check transient, if false, set URI to WordPress URI
 	delete_transient( 'google_jquery' );
-	
+
 	if ( 'false' == ( $google = get_transient( 'google_jquery' ) ) ) {
 		$url = $wpurl;
 	}
@@ -55,21 +55,21 @@ function wps_enqueue_jquery() {
 	elseif ( false === $google ) {
 		// Ping Google
 		$resp = wp_remote_head( $url );
-		
+
 		// Use Google jQuery
 		if ( ! is_wp_error( $resp ) && 200 == $resp['response']['code'] ) {
 			// Set transient for 5 minutes
 			set_transient( 'google_jquery', 'true', 60 * 5 );
-		} 
-		
+		}
+
 		// Use WordPress jQuery
 		else {
 			// Set transient for 5 minutes
 			set_transient( 'google_jquery', 'false', 60 * 5 );
-			
+
 			// Use WordPress URI
 			$url = $wpurl;
-			
+
 			// Set jQuery Version, WP stanards
 			$ver = '1.8.2';
 		}
@@ -77,11 +77,11 @@ function wps_enqueue_jquery() {
 
 	// Register surefire jQuery
 	wp_register_script( 'jquery', $url, array(), $ver, true );
-	
+
 	// Enqueue jQuery
 	wp_enqueue_script( 'jquery' );
 
-	// Now load basic site js 
+	// Now load basic site js
 	wp_enqueue_script('basic', get_bloginfo('template_directory').'/js/main.js', array('jquery'), '1.0');
 
 	// For comment reply form
@@ -90,6 +90,3 @@ function wps_enqueue_jquery() {
 	}
 
 }
-
-
-?>

@@ -4,9 +4,9 @@ add_action('after_setup_theme', 'd7_theme_setup');
 add_filter('stylesheet_uri', 'd7_stylesheet_uri', 10, 2);
 
 function d7_theme_setup() {
-	
+
 	global $content_width;
-	
+
 	// Set the $content_width for things such as video embeds.
 	// http://codex.wordpress.org/Content_Width
 	if ( !isset( $content_width ) )
@@ -31,5 +31,3 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-
-?>

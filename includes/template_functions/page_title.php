@@ -16,7 +16,7 @@
 		} elseif (is_day()) {
 			$title .= 'Archive for ' . get_the_time('F jS, Y');
 		} elseif (is_month()) {
-			$title .= __('Archive for') . ' ' . get_the_time('F, Y'); 
+			$title .= __('Archive for') . ' ' . get_the_time('F, Y');
 		} elseif (is_year()) {
 			$title .= __('Archive for') . ' ' . get_the_time('Y');
 		} elseif (is_search()) {
@@ -42,5 +42,3 @@
 	function page_title() {
 		echo get_page_title();
 	}
-
-?>

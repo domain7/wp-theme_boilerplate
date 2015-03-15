@@ -38,6 +38,3 @@
 	}
 
 	add_filter('getarchives_where', 'd7_custom_post_type_archive_where', 10 , 2);
-
-
-?>

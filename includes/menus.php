@@ -14,5 +14,3 @@ function d7_register_menus() {
 		'primary' => __('Primary Nav')
 	));
 }
-
-?>
