@@ -15,5 +15,6 @@ require_once 'includes/template_functions/custom_excerpt.php';
 require_once 'includes/template_functions/document_title.php';
 require_once 'includes/template_functions/page_title.php';
 require_once 'includes/template_functions/custom_fields.php';
+require_once 'includes/template_functions/post_classes.php';
 
 ?>
