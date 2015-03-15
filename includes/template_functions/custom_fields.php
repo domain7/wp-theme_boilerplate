@@ -16,7 +16,7 @@
 		// Grab ACF fields
 		$acf = false;
 		if ( function_exists('get_fields') ) {
-			$acf = get_fields($id);
+			$acf = get_field_objects($id);
 		}
 
 		// We're going to filter a bit and store the result here
@@ -47,13 +47,10 @@
 				continue;
 			}
 
-			// Skip arrays since we're just using text fields
-			if ( is_array($value) ) {
-				continue;
+			// Only doing text fields
+			if ( $value['type'] == 'text' ) {
+				$custom_fields[$value['label']][] = get_field($value['name']);
 			}
-
-			$custom_fields[$key][] = $value;
-
 		}
 
 		return $custom_fields;
