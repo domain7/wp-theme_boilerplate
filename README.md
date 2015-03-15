@@ -17,20 +17,20 @@ A few notes/philosophy about this:
 
 Follow these steps to set up a shiney new Wordpress theme, complete with sassyplate, gruntyplate, and the D7 plugin boilerplate.
 
-##### WP Theme Boilerplate
+### WP Theme Boilerplate
 
 * Clone the wp theme boilerplate into the themes directory of your wp install ( git@bitbucket.org:domain7/wp-theme_boilerplate.git )
 * Rename wp-theme_boilerplate directory to the name of your new theme
 * In your new theme directory, delete .git directory and .gitignore file
 * Open the style.css file in the root of the theme, and customize with information for your new project.
 
-##### Mix In some Sass
+### Mix In some Sass
 
 * Clone sassyplate into the new theme ( git@bitbucket.org:domain7/sassyplate.git )
 * After cloning sassyplate into your theme, move the contents of /sassyplate into the theme (except the .git directory, .gitignore and readme.md files).
 * Replace the existing images directory with the one from sassyplate. Delete the sassyplate directory and what's left in it (git directory, .gitignore file, readme.md).
 
-##### Grunt for awhile (to do: use better pun here)
+### Grunt for awhile (to do: use better pun here)
 
 * Clone gruntyplate into the theme ( git@bitbucket.org:domain7/gruntyplate.git )
 * After cloning gruntyplate into your theme, move contents of /gruntyplate into the theme (except the .git directory, .gitignore and readme.md files). Replace existing js directory of the theme with the one from gruntyplate. Delete the gruntyplate directory and what's left in it (git directory, .gitignore file, readme.md).
@@ -38,10 +38,10 @@ Follow these steps to set up a shiney new Wordpress theme, complete with sassypl
 * Open the includes/scripts.php file, and on line 40, change the location of jQuery script (in gruntyplate its js/src/vendor/jquery-2.0.0.min.js)
 * Also in includes/scripts.php, and on line 85, change the reference to /js/main.js to the project script file (in this case, /js/build/enterpriseonline.min.js)
 
-##### Activate Theme
+### Activate Theme
 In wordpress admin, go to appearance / themes and activate your new wordpress theme.
 
-##### Plug In some Awesome stuff
+### Plug In some Awesome stuff
 
 The plugin boilerplate contains custom post types, taxonomies, and ACF field files. The purpose of containing these in a plugin, instead of in the theme, is to allow the separation of data from style.
 
@@ -51,6 +51,11 @@ The plugin boilerplate contains custom post types, taxonomies, and ACF field fil
 * Rename sitename.php file to the same name as your theme.
 * Open sitename.php file and replace all instances of `SITE NAME` and `sitename` with the same name as your theme.
 * In wordpress admin, go to plugins, and activate the plugin.
+
+## Login screen
+
+`includes/login_page.php` has been added to customize the login. A logo is assumed in `images/sprites/common-1x/logo.png` since this is our SASS structure.
+This can be customized, and a template for adding more custom login css/js in also in `login_page.php`.
 
 ## Extra - Install plugins like a boss with WP CLI
 
