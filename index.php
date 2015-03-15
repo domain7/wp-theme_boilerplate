@@ -9,6 +9,7 @@
 			<?php endif; ?>
 
 			<?php
+
 				if ( have_posts() ) :
 
 					// Start the Loop.
@@ -19,8 +20,16 @@
 						 * use this in a child theme, then include a file called called content-___.php
 						 * (where ___ is the post type) and that will be used instead. For post type content layout
 						 * create a new partials/content-POSTTYPE.php file. If none is found content.php will be used.
+						 *
+						 * partials/listing is used on archives and search results, while content is used for
+						 * full content post/page views.
 						 */
-						get_template_part( 'partials/content', get_post_type() );
+
+						if ( is_archive() || is_search() ) {
+							get_template_part( 'partials/listing', get_post_type() );
+						} else {
+							get_template_part( 'partials/content', get_post_type() );
+						}
 
 					endwhile;
 
