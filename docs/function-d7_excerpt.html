@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Function expand_body_classes | Domain7 Theme Boilerplate</title>
+	<title>Function d7_excerpt | Domain7 Theme Boilerplate</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -74,16 +74,14 @@
 
 			<h3>Functions</h3>
 			<ul>
-				<li><a href="function-d7_add_post_classes.html">d7_add_post_classes</a></li>
-				<li><a href="function-d7_custom_login_logo.html">d7_custom_login_logo</a></li>
-				<li><a href="function-d7_custom_login_title.html">d7_custom_login_title</a></li>
-				<li><a href="function-d7_custom_login_url.html">d7_custom_login_url</a></li>
-				<li><a href="function-d7_register_menus.html">d7_register_menus</a></li>
-				<li><a href="function-d7_register_sidebars.html">d7_register_sidebars</a></li>
-				<li><a href="function-d7_stylesheet_uri.html">d7_stylesheet_uri</a></li>
-				<li><a href="function-d7_theme_setup.html">d7_theme_setup</a></li>
-				<li class="active"><a href="function-expand_body_classes.html">expand_body_classes</a></li>
-				<li><a href="function-wps_enqueue_jquery.html">wps_enqueue_jquery</a></li>
+				<li><a href="function-d7_custom_excerpt.html">d7_custom_excerpt</a></li>
+				<li><a href="function-d7_custom_post_type_archive_where.html">d7_custom_post_type_archive_where</a></li>
+				<li><a href="function-d7_document_title.html">d7_document_title</a></li>
+				<li class="active"><a href="function-d7_excerpt.html">d7_excerpt</a></li>
+				<li><a href="function-d7_get_custom_fields.html">d7_get_custom_fields</a></li>
+				<li><a href="function-d7_get_document_title.html">d7_get_document_title</a></li>
+				<li><a href="function-d7_get_page_title.html">d7_get_page_title</a></li>
+				<li><a href="function-d7_page_title.html">d7_page_title</a></li>
 			</ul>
 		</div>
 	</div>
@@ -94,49 +92,52 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="function">
-	<h1>Function expand_body_classes</h1>
+	<h1>Function d7_excerpt</h1>
 
 
 	<div class="description">
-	<p>Expands the body classes added by WordPress. <br />
-Only called by <code>add_filter('body_class','expand_body_classes');</code></p>
-
-<h3>Added classes</h3>
-
-<ul>
-<li><code>.post_type-{post_type}</code></li>
-<li><code>.post_name-{post_name}</code></li>
-<li><code>.taxonomy-{tax_name}</code></li>
-<li><code>.taxonomy_term-{tax_term_slug}</code></li>
-<li><code>.taxonomy_id-{tax_id}</code></li>
-<li><code>.taxonomy_term_id-{tax_term_id}</code></li>
-</ul>
+	<p>Generates the excerpt portion of what gets printed in the template</p>
 	</div>
 
 	<div class="alert alert-info">
 		
-		<b>Package:</b> <a href="package-d7.html">d7</a>\<a href="package-d7.boilerplate.theme.html">boilerplate-theme</a>\<a href="package-d7.boilerplate.theme.filters.hooks.html">filters+hooks</a><br>
+		<b>Package:</b> <a href="package-d7.html">d7</a>\<a href="package-d7.boilerplate.theme.html">boilerplate-theme</a><br>
+				<b>Used by:</b>
+				<code><a href="function-d7_custom_excerpt.html">d7_custom_excerpt()</a></code><br>
+				<b>Todo:</b>
+				Rewrite this whole thing. It was stoled from the internet 5 years ago and has only been maintained a little bit<br>
 		<b>Located at</b>
-		<a href="source-function-expand_body_classes.html#5-60" title="Go to source code">
-			bodyclass.php
+		<a href="source-function-d7_excerpt.html#3-40" title="Go to source code">
+			template_functions/custom_excerpt.php
 		</a><br>
 	</div>
 
 
 	<h2>Parameters summary</h2>
 	<table class="summary table table-bordered table-striped" id="parameters">
-	<tr id="$classes">
-		<td class="name"><code></code></td>
-		<td class="value"><code><var>$classes</var></code></td>
-		<td></td>
+	<tr id="$limit">
+		<td class="name"><code>integer</code></td>
+		<td class="value"><code><var>$limit</var></code></td>
+		<td>Character limit for excerpt</td>
 	</tr>
-	<tr id="$class">
-		<td class="name"><code></code></td>
-		<td class="value"><code><var>$class</var> = <span class="php-quote">''</span></code></td>
-		<td></td>
+	<tr id="$id">
+		<td class="name"><code>integer</code></td>
+		<td class="value"><code><var>$id</var></code></td>
+		<td>post ID</td>
 	</tr>
 	</table>
 
+	<h2>Return value summary</h2>
+	<table class="summary table table-bordered table-striped" id="returns">
+	<tr>
+		<td class="name"><code>
+			string
+		</code></td>
+		<td>
+			HTML of excerpt
+		</td>
+	</tr>
+	</table>
 
 
 </div>
@@ -147,6 +148,6 @@ Only called by <code>add_filter('body_class','expand_body_classes');</code></p>
 	</div>
 </div>
 <script src="resources/combined.js?2d1b11028defa2366a18dd5e1addc1c7d8076a23"></script>
-<script src="elementlist.js?cc738e91a10747d0251cb36ab2b1e81b18690178"></script>
+<script src="elementlist.js?a07056268586bdafe9540c5c0ec666521b522157"></script>
 </body>
 </html>

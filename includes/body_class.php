@@ -1,10 +1,10 @@
 <?php
 
-add_filter('body_class','expand_body_classes');
+add_filter('body_class','d7_body_classes');
 
 /**
  * Expands the body classes added by WordPress. <br />
- * Only called by `add_filter('body_class','expand_body_classes');`
+ * Only called by `add_filter('body_class','d7_body_classes');`
  *
  * ### Added classes
  * * `.post_type-{post_type}`
@@ -19,7 +19,7 @@ add_filter('body_class','expand_body_classes');
  *
  * @internal Called by `body_class` filter
  */
-function expand_body_classes($classes, $class='') {
+function d7_body_classes($classes, $class='') {
 	global $wp_query;
 
 	if ( isset($wp_query->queried_object) ) {

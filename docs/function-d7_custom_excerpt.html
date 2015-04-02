@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Function document_title | Domain7 Theme Boilerplate</title>
+	<title>Function d7_custom_excerpt | Domain7 Theme Boilerplate</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -74,14 +74,14 @@
 
 			<h3>Functions</h3>
 			<ul>
-				<li><a href="function-custom_excerpt.html">custom_excerpt</a></li>
+				<li class="active"><a href="function-d7_custom_excerpt.html">d7_custom_excerpt</a></li>
 				<li><a href="function-d7_custom_post_type_archive_where.html">d7_custom_post_type_archive_where</a></li>
+				<li><a href="function-d7_document_title.html">d7_document_title</a></li>
+				<li><a href="function-d7_excerpt.html">d7_excerpt</a></li>
 				<li><a href="function-d7_get_custom_fields.html">d7_get_custom_fields</a></li>
-				<li class="active"><a href="function-document_title.html">document_title</a></li>
-				<li><a href="function-excerpt.html">excerpt</a></li>
-				<li><a href="function-get_document_title.html">get_document_title</a></li>
-				<li><a href="function-get_page_title.html">get_page_title</a></li>
-				<li><a href="function-page_title.html">page_title</a></li>
+				<li><a href="function-d7_get_document_title.html">d7_get_document_title</a></li>
+				<li><a href="function-d7_get_page_title.html">d7_get_page_title</a></li>
+				<li><a href="function-d7_page_title.html">d7_page_title</a></li>
 			</ul>
 		</div>
 	</div>
@@ -92,34 +92,66 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="function">
-	<h1>Function document_title</h1>
+	<h1>Function d7_custom_excerpt</h1>
 
 
 	<div class="description">
-	<p>Print the document title. This is legacy and needs revamping.</p>
+	<p>This function gets called in the template.</p>
 
 <h3>Usage</h3>
 
-<pre>&lt;title&gt;<span class="xlang">&lt;?php</span> document_title(); <span class="xlang">?&gt;</span>&lt;/title&gt;</pre>
+<pre>d7_custom_excerpt(<span class="php-var">$length</span>=<span class="php-num">50</span>,<span class="php-var">$more_txt</span>=<span class="php-quote">'Read More'</span>,<span class="php-var">$echo</span>=<span class="php-keyword1">true</span>);</pre>
 	</div>
 
 	<div class="alert alert-info">
 		
 		<b>Package:</b> <a href="package-d7.html">d7</a>\<a href="package-d7.boilerplate.theme.html">boilerplate-theme</a><br>
 				<b>Uses:</b>
-				<code><a href="function-get_document_title.html">get_document_title()</a></code><br>
-				<b>Link:</b>
-				<a href="https://codex.wordpress.org/Function_Reference/wp_title">WordPress&#039;s wp_title() function</a><br>
+				<code><a href="function-d7_excerpt.html">d7_excerpt()</a></code><br>
 				<b>Todo:</b>
-				Look into replacing most of this with wp_title<br>
+				Rewrite this function to follow the pattern I've been using lately<br>
 		<b>Located at</b>
-		<a href="source-function-document_title.html#46-63" title="Go to source code">
-			template_functions/document_title.php
+		<a href="source-function-d7_custom_excerpt.html#42-90" title="Go to source code">
+			template_functions/custom_excerpt.php
 		</a><br>
 	</div>
 
 
+	<h2>Parameters summary</h2>
+	<table class="summary table table-bordered table-striped" id="parameters">
+	<tr id="$length">
+		<td class="name"><code>integer</code></td>
+		<td class="value"><code><var>$length</var> = <span class="php-quote">''</span></code></td>
+		<td>Excerpt length</td>
+	</tr>
+	<tr id="$more_txt">
+		<td class="name"><code>string</code></td>
+		<td class="value"><code><var>$more_txt</var> = <span class="php-quote">'Read More'</span></code></td>
+		<td>$more_text Read more text</td>
+	</tr>
+	<tr id="$echo">
+		<td class="name"><code>boolean</code></td>
+		<td class="value"><code><var>$echo</var> = <span class="php-keyword1">true</span></code></td>
+		<td>Echo or return the excerpt</td>
+	</tr>
+	<tr id="$id">
+		<td class="name"><code>boolean</code></td>
+		<td class="value"><code><var>$id</var> = <span class="php-keyword1">false</span></code></td>
+		<td>Get the excerpt by ID</td>
+	</tr>
+	</table>
 
+	<h2>Return value summary</h2>
+	<table class="summary table table-bordered table-striped" id="returns">
+	<tr>
+		<td class="name"><code>
+			string|nill
+		</code></td>
+		<td>
+			Echos the html or returns it
+		</td>
+	</tr>
+	</table>
 
 
 </div>
@@ -130,6 +162,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?2d1b11028defa2366a18dd5e1addc1c7d8076a23"></script>
-<script src="elementlist.js?cc738e91a10747d0251cb36ab2b1e81b18690178"></script>
+<script src="elementlist.js?a07056268586bdafe9540c5c0ec666521b522157"></script>
 </body>
 </html>

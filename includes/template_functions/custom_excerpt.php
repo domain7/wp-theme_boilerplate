@@ -14,7 +14,7 @@
 	 * @todo Rewrite this whole thing. It was stoled from the internet 5 years ago and has only been maintained a little bit
 	 *
 	 */
-	function excerpt($limit, $id) {
+	function d7_excerpt($limit, $id) {
 
 		if ( has_excerpt($id) ) {
 			$content = get_post_field('post_excerpt', $id);
@@ -44,7 +44,7 @@
 	 *
 	 * ### Usage
 	 * ```php
-	 * custom_excerpt($length=50,$more_txt='Read More',$echo=true);
+	 * d7_custom_excerpt($length=50,$more_txt='Read More',$echo=true);
 	 * ```
 	 *
 	 * @package d7
@@ -55,12 +55,12 @@
 	 * @param bool $echo Echo or return the excerpt
 	 * @param bool $id Get the excerpt by ID
 	 *
-	 * @uses excerpt()
+	 * @uses d7_excerpt()
 	 * @todo Rewrite this function to follow the pattern I've been using lately
 	 * @return string|nill 	Echos the html or returns it
 	 *
 	 */
-	function custom_excerpt($length='',$more_txt='Read More',$echo=true, $id=false) {
+	function d7_custom_excerpt($length='',$more_txt='Read More',$echo=true, $id=false) {
 
 		$post_id = $id ? $id : get_post()->ID;
 
@@ -70,7 +70,7 @@
 			} else {
 				$excerpt_length = $length;
 			}
-		$excerpt = excerpt($excerpt_length, $post_id);
+		$excerpt = d7_excerpt($excerpt_length, $post_id);
 
 		if ( $more_txt ) {
 			$link = '<a href="'.get_permalink(get_post()->ID).'" class="more_link">'.$more_txt.'</a>';

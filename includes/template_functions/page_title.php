@@ -10,7 +10,7 @@
 	 * @return string The page title
 	 *
 	 */
-	function get_page_title() {
+	function d7_get_page_title() {
 
 		$title = '';
 
@@ -49,9 +49,9 @@
 	 * @package d7
 	 * @subpackage boilerplate-theme
 	 *
-	 * @uses get_page_title()
+	 * @uses d7_get_page_title()
 	 *
 	 */
-	function page_title() {
-		echo get_page_title();
+	function d7_page_title() {
+		echo d7_get_page_title();
 	}

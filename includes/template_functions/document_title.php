@@ -11,7 +11,7 @@
 	 * @return string 	Title for the head
 	 *
 	 */
-	function get_document_title() {	$title = '';
+	function d7_get_document_title() {	$title = '';
 
 		$title = '';
 
@@ -53,11 +53,11 @@
 	 * @package d7
 	 * @subpackage boilerplate-theme
 	 *
-	 * @uses get_document_title()
+	 * @uses d7_get_document_title()
 	 * @todo Look into replacing most of this with wp_title
 	 * @link https://codex.wordpress.org/Function_Reference/wp_title WordPress's wp_title() function
 	 *
 	 */
-	function document_title() {
-		echo get_document_title();
+	function d7_document_title() {
+		echo d7_get_document_title();
 	}

@@ -6,7 +6,7 @@
 <!--[if gt IE 9]><!--><html class="no-js" lang="<?php bloginfo('language') ?>"><!--<![endif]-->
 <head>
 
-	<title><?php document_title(); ?></title>
+	<title><?php d7_document_title(); ?></title>
 
 	<meta name="description" content="<?php bloginfo('description') ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

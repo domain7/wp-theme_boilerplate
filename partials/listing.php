@@ -9,7 +9,7 @@
 	</header>
 
 	<div class="post-summary">
-		<?php custom_excerpt(45, "More Info"); ?>
+		<?php d7_custom_excerpt(45, "More Info"); ?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

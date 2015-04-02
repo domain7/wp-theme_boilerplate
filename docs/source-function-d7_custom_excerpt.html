@@ -22,7 +22,7 @@
 							<a href="package-d7.boilerplate.theme.filters.hooks.html" title="Summary of d7\boilerplate-theme\filters+hooks"><span>Package</span></a>
 						</li>
 						<li>
-							<a href="function-wps_enqueue_jquery.html" title="Summary of wps_enqueue_jquery"><span>Function</span></a>
+							<a href="function-d7_theme_setup.html" title="Summary of d7_theme_setup"><span>Function</span></a>
 						</li>
 
 						<li class="divider-vertical"></li>
@@ -78,15 +78,15 @@
 			<h3>Functions</h3>
 			<ul>
 				<li><a href="function-d7_add_post_classes.html">d7_add_post_classes</a></li>
+				<li><a href="function-d7_body_classes.html">d7_body_classes</a></li>
 				<li><a href="function-d7_custom_login_logo.html">d7_custom_login_logo</a></li>
 				<li><a href="function-d7_custom_login_title.html">d7_custom_login_title</a></li>
 				<li><a href="function-d7_custom_login_url.html">d7_custom_login_url</a></li>
+				<li><a href="function-d7_enqueue_jquery.html">d7_enqueue_jquery</a></li>
 				<li><a href="function-d7_register_menus.html">d7_register_menus</a></li>
 				<li><a href="function-d7_register_sidebars.html">d7_register_sidebars</a></li>
 				<li><a href="function-d7_stylesheet_uri.html">d7_stylesheet_uri</a></li>
-				<li><a href="function-d7_theme_setup.html">d7_theme_setup</a></li>
-				<li><a href="function-expand_body_classes.html">expand_body_classes</a></li>
-				<li class="active"><a href="function-wps_enqueue_jquery.html">wps_enqueue_jquery</a></li>
+				<li class="active"><a href="function-d7_theme_setup.html">d7_theme_setup</a></li>
 			</ul>
 		</div>
 	</div>
@@ -112,7 +112,7 @@
 </span></span><span id="14" class="l"><a href="#14">14 </a><span class="php-comment">     * @todo Rewrite this whole thing. It was stoled from the internet 5 years ago and has only been maintained a little bit
 </span></span><span id="15" class="l"><a href="#15">15 </a><span class="php-comment">     *
 </span></span><span id="16" class="l"><a href="#16">16 </a><span class="php-comment">     */</span>
-</span><span id="17" class="l"><a href="#17">17 </a>    <span class="php-keyword1">function</span> excerpt(<span class="php-var">$limit</span>, <span class="php-var">$id</span>) {
+</span><span id="17" class="l"><a href="#17">17 </a>    <span class="php-keyword1">function</span> d7_excerpt(<span class="php-var">$limit</span>, <span class="php-var">$id</span>) {
 </span><span id="18" class="l"><a href="#18">18 </a>
 </span><span id="19" class="l"><a href="#19">19 </a>        <span class="php-keyword1">if</span> ( has_excerpt(<span class="php-var">$id</span>) ) {
 </span><span id="20" class="l"><a href="#20">20 </a>            <span class="php-var">$content</span> = get_post_field(<span class="php-quote">'post_excerpt'</span>, <span class="php-var">$id</span>);
@@ -142,7 +142,7 @@
 </span></span><span id="44" class="l"><a href="#44">44 </a><span class="php-comment">     *
 </span></span><span id="45" class="l"><a href="#45">45 </a><span class="php-comment">     * ### Usage
 </span></span><span id="46" class="l"><a href="#46">46 </a><span class="php-comment">     * ```php
-</span></span><span id="47" class="l"><a href="#47">47 </a><span class="php-comment">     * custom_excerpt($length=50,$more_txt='Read More',$echo=true);
+</span></span><span id="47" class="l"><a href="#47">47 </a><span class="php-comment">     * d7_custom_excerpt($length=50,$more_txt='Read More',$echo=true);
 </span></span><span id="48" class="l"><a href="#48">48 </a><span class="php-comment">     * ```
 </span></span><span id="49" class="l"><a href="#49">49 </a><span class="php-comment">     *
 </span></span><span id="50" class="l"><a href="#50">50 </a><span class="php-comment">     * @package d7
@@ -153,12 +153,12 @@
 </span></span><span id="55" class="l"><a href="#55">55 </a><span class="php-comment">     * @param bool $echo Echo or return the excerpt
 </span></span><span id="56" class="l"><a href="#56">56 </a><span class="php-comment">     * @param bool $id Get the excerpt by ID
 </span></span><span id="57" class="l"><a href="#57">57 </a><span class="php-comment">     *
-</span></span><span id="58" class="l"><a href="#58">58 </a><span class="php-comment">     * @uses excerpt()
+</span></span><span id="58" class="l"><a href="#58">58 </a><span class="php-comment">     * @uses d7_excerpt()
 </span></span><span id="59" class="l"><a href="#59">59 </a><span class="php-comment">     * @todo Rewrite this function to follow the pattern I've been using lately
 </span></span><span id="60" class="l"><a href="#60">60 </a><span class="php-comment">     * @return string|nill  Echos the html or returns it
 </span></span><span id="61" class="l"><a href="#61">61 </a><span class="php-comment">     *
 </span></span><span id="62" class="l"><a href="#62">62 </a><span class="php-comment">     */</span>
-</span><span id="63" class="l"><a href="#63">63 </a>    <span class="php-keyword1">function</span> custom_excerpt(<span class="php-var">$length</span>=<span class="php-quote">''</span>,<span class="php-var">$more_txt</span>=<span class="php-quote">'Read More'</span>,<span class="php-var">$echo</span>=<span class="php-keyword1">true</span>, <span class="php-var">$id</span>=<span class="php-keyword1">false</span>) {
+</span><span id="63" class="l"><a href="#63">63 </a>    <span class="php-keyword1">function</span> d7_custom_excerpt(<span class="php-var">$length</span>=<span class="php-quote">''</span>,<span class="php-var">$more_txt</span>=<span class="php-quote">'Read More'</span>,<span class="php-var">$echo</span>=<span class="php-keyword1">true</span>, <span class="php-var">$id</span>=<span class="php-keyword1">false</span>) {
 </span><span id="64" class="l"><a href="#64">64 </a>
 </span><span id="65" class="l"><a href="#65">65 </a>        <span class="php-var">$post_id</span> = <span class="php-var">$id</span> ? <span class="php-var">$id</span> : get_post()-&gt;ID;
 </span><span id="66" class="l"><a href="#66">66 </a>
@@ -168,7 +168,7 @@
 </span><span id="70" class="l"><a href="#70">70 </a>            } <span class="php-keyword1">else</span> {
 </span><span id="71" class="l"><a href="#71">71 </a>                <span class="php-var">$excerpt_length</span> = <span class="php-var">$length</span>;
 </span><span id="72" class="l"><a href="#72">72 </a>            }
-</span><span id="73" class="l"><a href="#73">73 </a>        <span class="php-var">$excerpt</span> = excerpt(<span class="php-var">$excerpt_length</span>, <span class="php-var">$post_id</span>);
+</span><span id="73" class="l"><a href="#73">73 </a>        <span class="php-var">$excerpt</span> = d7_excerpt(<span class="php-var">$excerpt_length</span>, <span class="php-var">$post_id</span>);
 </span><span id="74" class="l"><a href="#74">74 </a>
 </span><span id="75" class="l"><a href="#75">75 </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$more_txt</span> ) {
 </span><span id="76" class="l"><a href="#76">76 </a>            <span class="php-var">$link</span> = <span class="php-quote">'&lt;a href=&quot;'</span>.get_permalink(get_post()-&gt;ID).<span class="php-quote">'&quot; class=&quot;more_link&quot;&gt;'</span>.<span class="php-var">$more_txt</span>.<span class="php-quote">'&lt;/a&gt;'</span>;
@@ -194,6 +194,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?2d1b11028defa2366a18dd5e1addc1c7d8076a23"></script>
-<script src="elementlist.js?cc738e91a10747d0251cb36ab2b1e81b18690178"></script>
+<script src="elementlist.js?a07056268586bdafe9540c5c0ec666521b522157"></script>
 </body>
 </html>

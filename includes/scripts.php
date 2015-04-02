@@ -6,7 +6,7 @@
  * Then we load basic styles.
  */
 
-add_action( 'wp_enqueue_scripts', 'wps_enqueue_jquery' );
+add_action( 'wp_enqueue_scripts', 'd7_enqueue_jquery' );
 
 /**
  * Enqueue jQuery from Google CDN with fallback to local WordPress
@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', 'wps_enqueue_jquery' );
  * @uses wp_register_script()   Registers javascripts for use with wp_enqueue_script() later.
  * @uses wp_enqueue_script()    Enqueues javascript.
  */
-function wps_enqueue_jquery() {
+function d7_enqueue_jquery() {
 	// Setup Google URI, default
 	$protocol = ( isset( $_SERVER['HTTPS'] ) && 'on' == $_SERVER['HTTPS'] ) ? 'https' : 'http';
 	// Get Latest Version
