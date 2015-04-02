@@ -84,6 +84,7 @@
 				<li><a href="function-d7_custom_login_url.html">d7_custom_login_url</a></li>
 				<li><a href="function-d7_custom_post_type_archive_where.html">d7_custom_post_type_archive_where</a></li>
 				<li><a href="function-d7_enqueue_jquery.html">d7_enqueue_jquery</a></li>
+				<li><a href="function-d7_nav_class.html">d7_nav_class</a></li>
 				<li><a href="function-d7_register_menus.html">d7_register_menus</a></li>
 				<li><a href="function-d7_register_sidebars.html">d7_register_sidebars</a></li>
 				<li><a href="function-d7_stylesheet_uri.html">d7_stylesheet_uri</a></li>
@@ -155,9 +156,16 @@
 </span><span id="56" class="l"><a href="#56">56 </a>
 </span><span id="57" class="l"><a href="#57">57 </a>    } <span class="php-comment">// if isset</span>
 </span><span id="58" class="l"><a href="#58">58 </a>
-</span><span id="59" class="l"><a href="#59">59 </a>    <span class="php-keyword1">return</span> <span class="php-var">$classes</span>;<span class="php-comment">// return the $classes array</span>
-</span><span id="60" class="l"><a href="#60">60 </a>}
-</span><span id="61" class="l"><a href="#61">61 </a></span></code></pre>
+</span><span id="59" class="l"><a href="#59">59 </a>    <span class="php-comment">// Has image</span>
+</span><span id="60" class="l"><a href="#60">60 </a>    <span class="php-keyword1">if</span> ( has_post_thumbnail() ) {
+</span><span id="61" class="l"><a href="#61">61 </a>        <span class="php-comment">// Using a dash instead of underscore because WP turns it</span>
+</span><span id="62" class="l"><a href="#62">62 </a>        <span class="php-comment">// into that anyway and I want to be more transparent</span>
+</span><span id="63" class="l"><a href="#63">63 </a>        <span class="php-var">$classes</span>[] = <span class="php-quote">'has-post-thumbnail'</span>;
+</span><span id="64" class="l"><a href="#64">64 </a>    }
+</span><span id="65" class="l"><a href="#65">65 </a>
+</span><span id="66" class="l"><a href="#66">66 </a>    <span class="php-keyword1">return</span> <span class="php-var">$classes</span>;<span class="php-comment">// return the $classes array</span>
+</span><span id="67" class="l"><a href="#67">67 </a>}
+</span><span id="68" class="l"><a href="#68">68 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
@@ -165,6 +173,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?2d1b11028defa2366a18dd5e1addc1c7d8076a23"></script>
-<script src="elementlist.js?a07056268586bdafe9540c5c0ec666521b522157"></script>
+<script src="elementlist.js?dbd8615222e89f9daeec4b8a2616e3c0458fc6ff"></script>
 </body>
 </html>

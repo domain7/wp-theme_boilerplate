@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File menus.php | Domain7 Theme Boilerplate</title>
+	<title>File menu_classes.php | Domain7 Theme Boilerplate</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -100,22 +100,25 @@
 	<div id="rightInner">
 <pre id="source"><code><span id="1" class="l"><a href="#1"> 1 </a><span class="xlang">&lt;?php</span>
 </span><span id="2" class="l"><a href="#2"> 2 </a>
-</span><span id="3" class="l"><a href="#3"> 3 </a>add_action(<span class="php-quote">'init'</span>, <span class="php-quote">'d7_register_menus'</span>);
-</span><span id="4" class="l"><a href="#4"> 4 </a>
-</span><span id="5" class="l"><a href="#5"> 5 </a><span class="php-comment">/**
-</span></span><span id="6" class="l"><a href="#6"> 6 </a><span class="php-comment"> * Core menu registration.
-</span></span><span id="7" class="l"><a href="#7"> 7 </a><span class="php-comment"> *
-</span></span><span id="8" class="l"><a href="#8"> 8 </a><span class="php-comment"> * @package d7
-</span></span><span id="9" class="l"><a href="#9"> 9 </a><span class="php-comment"> * @subpackage boilerplate-theme_filters+hooks
-</span></span><span id="10" class="l"><a href="#10">10 </a><span class="php-comment"> * @internal called by init action
-</span></span><span id="11" class="l"><a href="#11">11 </a><span class="php-comment"> * @link https://codex.wordpress.org/Function_Reference/register_nav_menus
-</span></span><span id="12" class="l"><a href="#12">12 </a><span class="php-comment"> */</span>
-</span><span id="13" class="l"><a href="#13">13 </a><span class="php-keyword1">function</span> d7_register_menus() {
-</span><span id="14" class="l"><a href="#14">14 </a>    register_nav_menus(<span class="php-keyword1">array</span>(
-</span><span id="15" class="l"><a href="#15">15 </a>        <span class="php-quote">'primary'</span> =&gt; __(<span class="php-quote">'Primary Nav'</span>)
-</span><span id="16" class="l"><a href="#16">16 </a>    ));
-</span><span id="17" class="l"><a href="#17">17 </a>}
-</span><span id="18" class="l"><a href="#18">18 </a></span></code></pre>
+</span><span id="3" class="l"><a href="#3"> 3 </a>    <span class="php-comment">/**
+</span></span><span id="4" class="l"><a href="#4"> 4 </a><span class="php-comment">     *  Add link name to css class of menu items
+</span></span><span id="5" class="l"><a href="#5"> 5 </a><span class="php-comment">     *
+</span></span><span id="6" class="l"><a href="#6"> 6 </a><span class="php-comment">     * @package d7
+</span></span><span id="7" class="l"><a href="#7"> 7 </a><span class="php-comment">     * @subpackage boilerplate-theme_filters+hooks
+</span></span><span id="8" class="l"><a href="#8"> 8 </a><span class="php-comment">     *
+</span></span><span id="9" class="l"><a href="#9"> 9 </a><span class="php-comment">     * @internal called by `nav_menu_css_class` filter
+</span></span><span id="10" class="l"><a href="#10">10 </a><span class="php-comment">     *
+</span></span><span id="11" class="l"><a href="#11">11 </a><span class="php-comment">     */</span>
+</span><span id="12" class="l"><a href="#12">12 </a>    <span class="php-keyword1">function</span> d7_nav_class( <span class="php-var">$classes</span>, <span class="php-var">$item</span> ) {
+</span><span id="13" class="l"><a href="#13">13 </a>
+</span><span id="14" class="l"><a href="#14">14 </a>        <span class="php-var">$classes</span>[] = <span class="php-keyword2">strtolower</span>(<span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;--&quot;</span>, <span class="php-quote">&quot;&quot;</span>, <span class="php-keyword2">preg_replace</span>(<span class="php-quote">&quot;([^a-zA-Z])&quot;</span>, <span class="php-quote">&quot;-&quot;</span>, <span class="php-var">$item</span>-&gt;title)));
+</span><span id="15" class="l"><a href="#15">15 </a>
+</span><span id="16" class="l"><a href="#16">16 </a>        <span class="php-keyword1">return</span> <span class="php-var">$classes</span>;
+</span><span id="17" class="l"><a href="#17">17 </a>
+</span><span id="18" class="l"><a href="#18">18 </a>    }
+</span><span id="19" class="l"><a href="#19">19 </a>
+</span><span id="20" class="l"><a href="#20">20 </a>    add_filter(<span class="php-quote">'nav_menu_css_class'</span>, <span class="php-quote">'d7_nav_class'</span>, <span class="php-num">10</span>, <span class="php-num">2</span>);
+</span><span id="21" class="l"><a href="#21">21 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
