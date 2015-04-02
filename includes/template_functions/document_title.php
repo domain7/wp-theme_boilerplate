@@ -1,50 +1,29 @@
 <?php
 
 	/**
-	 * Return document title, used in the title tag. This is legacy and should be revamped/
+	 * Return document title, used in the title tag and og:title.
 	 *
  	 * @package d7
 	 * @subpackage boilerplate-theme
 	 *
-	 * @todo Look into replacing most of this with wp_title
 	 * @link https://codex.wordpress.org/Function_Reference/wp_title WordPress's wp_title() function
+	 *
 	 * @return string 	Title for the head
 	 *
 	 */
-	function d7_get_document_title() {	$title = '';
+	function d7_get_document_title() {
 
-		$title = '';
-
-		if ( function_exists('is_tag') && is_tag() ) {
-			$title .= __('Tag Archive for') . '&quot;' . single_tag_title('', false) . '&quot; - ';
-		} elseif ( is_archive() ) {
-			$title .= trim(wp_title('', false));
-			$title .= ' ' . __('Archive') . ' - ';
-		} elseif ( is_search() ) {
-			if ( isset($_GET['s']) ) {
-				$title .= __('Search for') . ' &quot;' . esc_html($_GET['s']) . '&quot; - ';
-			} else {
-				$title .= __('Search results');
-			}
-		} elseif ( !(is_404()) && (is_single()) || (is_page()) ) {
-			$title .= trim(wp_title('', false));
-			$title .= ' - ';
-		} elseif ( is_404() ) {
-			$title .= __('Not Found') . ' - ';
-		} if ( is_home() ) {
-			$title .= get_bloginfo('name');
-			$title .= ' - ';
-			$title .= get_bloginfo('description');
+		if ( is_home() ) {
+			return get_bloginfo('name');
 		} else {
-			$title .= get_bloginfo('name');
+			return wp_title('-', false, 'right') . get_bloginfo('name');
 		}
 
-		return $title;
 
 	}
 
 	/**
-	 * Print the document title. This is legacy and needs revamping.
+	 * Print the document title, used in the title tag and og:title.
 	 *
 	 * ### Usage
 	 * ```php
@@ -54,7 +33,6 @@
 	 * @subpackage boilerplate-theme
 	 *
 	 * @uses d7_get_document_title()
-	 * @todo Look into replacing most of this with wp_title
 	 * @link https://codex.wordpress.org/Function_Reference/wp_title WordPress's wp_title() function
 	 *
 	 */
