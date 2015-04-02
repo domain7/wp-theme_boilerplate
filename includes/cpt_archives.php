@@ -1,13 +1,16 @@
 <?php
 
 	/**
-	 * This allows you to pass a 'post_type' argument to wp_get_archives
+	 * This allows you to pass a `post_type` argument to wp_get_archives
 	 * as a string or an array.
 	 *
-	 * Docs on wp_get_archives(): http://codex.wordpress.org/Function_Reference/wp_get_archives
+	 * @package d7
+	 * @subpackage boilerplate-theme
+	 *
+	 * @internal only called by `getarchives_where` filter
+	 * @link http://codex.wordpress.org/Function_Reference/wp_get_archives Docs on wp_get_archives()
 	 *
 	 */
-
 	function d7_custom_post_type_archive_where($where,$args){
 
 		if ( isset($args['post_type']) ) {

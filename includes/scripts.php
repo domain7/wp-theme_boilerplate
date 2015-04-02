@@ -10,7 +10,15 @@ add_action( 'wp_enqueue_scripts', 'wps_enqueue_jquery' );
 
 /**
  * Enqueue jQuery from Google CDN with fallback to local WordPress
+ * First we have a really complex method of loading jQuery from the CDN or local
+ * should the CDN fail. The code is adapted from https://gist.github.com/wpsmith/4083811.
+ * Then we load basic styles.
  *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal only called by `wp_enqueue_scripts` action
+ *
+ * @link https://gist.github.com/wpsmith/4083811.
  * @link http://codex.wordpress.org/Function_Reference/wp_enqueue_script
  * @link http://codex.wordpress.org/Function_Reference/wp_register_script
  * @link http://codex.wordpress.org/Function_Reference/wp_deregister_script

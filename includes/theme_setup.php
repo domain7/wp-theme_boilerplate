@@ -3,6 +3,15 @@
 add_action('after_setup_theme', 'd7_theme_setup');
 add_filter('stylesheet_uri', 'd7_stylesheet_uri', 10, 2);
 
+/**
+ * Basic theme setup stuff like theme support
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal only called as `after_setup_theme` action
+ * @link https://codex.wordpress.org/Function_Reference/add_theme_support
+ *
+ */
 function d7_theme_setup() {
 
 	global $content_width;
@@ -17,7 +26,15 @@ function d7_theme_setup() {
 
 }
 
-// Change the stylesheet url to our compiled stylesheet from Sassyplayte - https://bitbucket.org/domain7/sassyplate
+/**
+ * Change the stylesheet url to our compiled stylesheet from Sassyplayte
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal only called as `stylesheet_uri` filter
+ * @link https://bitbucket.org/domain7/sassyplate Sassyplate SASS boilerplate repo
+ *
+ */
 function d7_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
 	return $stylesheet_dir_uri . '/stylesheets/css/screen.css';
 }

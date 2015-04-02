@@ -1,9 +1,14 @@
 <?php
 
 	/**
-	 * Add custom classes to post_class()
+	 * Expand post classes.
+	 *
+	 * @package d7
+	 * @subpackage boilerplate-theme_filters+hooks
+	 *
+	 * @internal called by `post_class` filter
+	 *
 	 */
-
 	function d7_add_post_classes($classes) {
 
 		// Full post or listing item

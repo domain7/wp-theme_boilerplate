@@ -2,6 +2,11 @@
 
 /**
  * Customize the login page to match site branding, link to homepage instead of wordpress.org
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal called by add_filter( 'login_head', 'd7_custom_login_logo' );
+ *
  */
 function d7_custom_login_logo() {
 
@@ -37,7 +42,14 @@ function d7_custom_login_logo() {
 add_filter( 'login_head', 'd7_custom_login_logo' );
 
 
-// Change login page logo link
+/**
+ * Change the url when clicking login logo
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal called by login_headerurl filter
+ *
+ */
 function d7_custom_login_url(){
 	return get_bloginfo('url');
 }
@@ -45,7 +57,14 @@ function d7_custom_login_url(){
 add_filter('login_headerurl', 'd7_custom_login_url');
 
 
-// Changes login page logo title
+/**
+ * Customize the login title
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @internal called by login_headertitle filter
+ *
+ */
 function d7_custom_login_title() {
 	return get_bloginfo('name');
 }

@@ -2,6 +2,23 @@
 
 add_filter('body_class','expand_body_classes');
 
+/**
+ * Expands the body classes added by WordPress. <br />
+ * Only called by `add_filter('body_class','expand_body_classes');`
+ *
+ * ### Added classes
+ * * `.post_type-{post_type}`
+ * * `.post_name-{post_name}`
+ * * `.taxonomy-{tax_name}`
+ * * `.taxonomy_term-{tax_term_slug}`
+ * * `.taxonomy_id-{tax_id}`
+ * * `.taxonomy_term_id-{tax_term_id}`
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ *
+ * @internal Called by `body_class` filter
+ */
 function expand_body_classes($classes, $class='') {
 	global $wp_query;
 

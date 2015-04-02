@@ -1,14 +1,14 @@
 <?php
 
-/**
- * Sidebars
- *
- * Documentation: // http://codex.wordpress.org/Function_Reference/register_sidebar
- *
- */
-
 add_action('widgets_init', 'd7_register_sidebars');
 
+/**
+ * Register WordPress Sitebars
+ *
+ * @package d7
+ * @subpackage boilerplate-theme_filters+hooks
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
 function d7_register_sidebars() {
 	register_sidebar(
 		array(
