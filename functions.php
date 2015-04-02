@@ -5,6 +5,7 @@ include_once 'includes/theme_setup.php'; // stylesheet_uri, after_setup_theme, c
 include_once 'includes/scripts.php'; // Enqued Scripts
 include_once 'includes/body_class.php'; // Add page slug as body class. Also include the page parent
 require_once 'includes/post_classes.php';
+require_once 'includes/menu_classes.php';
 include_once 'includes/menus.php';
 include_once 'includes/image_sizes.php';
 include_once 'includes/sidebars.php';
