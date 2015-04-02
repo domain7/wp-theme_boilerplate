@@ -53,7 +53,7 @@
 	 *
 	 * ### Usage:
 	 * ```php
-	 * d7_acf_image(get_field('photo'), 'large', 'post-photo');
+	 * d7_acf_image(get_field('photo'), 'large', 'fancy_class');
 	 * ```
 	 *
 	 * @package d7
@@ -69,3 +69,46 @@
 	function d7_acf_image($image, $size, $classes) {
 		echo d7_get_acf_image($image, $size, $classes);
 	}
+
+
+	/**
+	 * Returns the url of a post thumbnail for the current post. Can also specify
+	 * post ID and image size.
+	 *
+	 * ### Usage
+	 * For the full image of the current post:
+	 * <code>
+	 * $image = d7_get_post_thumbnail_url();
+	 * </code>
+	 *
+	 * For the 'thumbnail' size of another post:
+	 * <code>
+	 * $image = d7_get_post_thumbnail_url('thumbnail', 13);
+	 * </code>
+	 *
+	 * For the full image of another post:
+	 * <code>
+	 * $image = d7_get_post_thumbnail_url('full', 13);
+	 * </code>
+	 *
+	 * @package d7
+	 * @subpackage boilerplate-theme
+	 *
+	 * @param string $size 		The image size to return. Use 'full' for full image
+	 * @param ind $id 			ID of another post to return
+	 *
+	 * @return string|bool 		Image URL or false
+	 */
+	function d7_get_post_thumbnail_url($size='', $id = false) {
+
+		if ( !$id ) {
+			$id = get_the_ID();
+		}
+
+		if ( has_post_thumbnail($id) ) {
+			$url = wp_get_attachment_image_src(get_post_thumbnail_id($id), $size);
+			return $url[0];
+		} else {
+			return false;
+		}
+}
