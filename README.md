@@ -19,14 +19,14 @@ Follow these steps to set up a shiney new Wordpress theme, complete with sassypl
 
 ### WP Theme Boilerplate
 
-* Clone the wp theme boilerplate into the themes directory of your wp install ( git@bitbucket.org:domain7/wp-theme_boilerplate.git )
+* Clone the wp theme boilerplate into the themes directory of your wp install ( https://github.com/domain7/wp-theme_boilerplate.git )
 * Rename wp-theme_boilerplate directory to the name of your new theme
 * In your new theme directory, delete .git directory and .gitignore file
 * Open the style.css file in the root of the theme, and customize with information for your new project.
 
 ### Mix In some Sass
 
-* Clone sassyplate into the new theme ( git@bitbucket.org:domain7/sassyplate.git )
+* Clone sassyplate into the new theme ( https://github.com/domain7/sassyplate.git )
 * After cloning sassyplate into your theme, move the contents of /sassyplate into the theme (except the .git directory, .gitignore and readme.md files).
 * Replace the existing images directory with the one from sassyplate. Delete the sassyplate directory and what's left in it (git directory, .gitignore file, readme.md).
 
@@ -45,7 +45,7 @@ In wordpress admin, go to appearance / themes and activate your new wordpress th
 
 The plugin boilerplate contains custom post types, taxonomies, and ACF field files. The purpose of containing these in a plugin, instead of in the theme, is to allow the separation of data from style.
 
-* Navigate to plugins folder of your WP install and clone in the wp plugin boilerplate ( git@bitbucket.org:domain7/wp-plugin_boilerplate.git )
+* Navigate to plugins folder of your WP install and clone in the wp plugin boilerplate ( https://github.com/domain7/wp-plugin_boilerplate.git )
 * Delete the .git directory and .gitignore file
 * Rename the wp-plugin_boilerplate directory to the same name as your theme.
 * Rename sitename.php file to the same name as your theme.
