@@ -12,6 +12,8 @@ A few notes/philosophy about this:
 2. Except for the homepage, every single page is rendered with index.php. Using front-page.php for your homepage lets you do this. Archives, search results, pages, posts... they're all rendered with index.php, with the loop partial displaying the actual content. This is done to suggest a build style where you use as few templates as possible, and reuse as much as possible. Use the template flow chart to figure out what to add if you need to, but I feel really strongly about reuse being something with huge productivity gains, as well as end result consistency gains. You'll likely add several new template files, but I wanted to create a theme that worked with as few templates as possible to encourage reuse.
 3. This theme defines no custom post types or custom taxonomies. It shouldn't contain any non-presentational logic at all. This should all be custom plugins. A site plugin should be set up for post types and taxonomies.
 
+## Function reference
+Please refer to this project's function reference documentation: http://domain7.github.io/wp-theme_boilerplate
 
 ## Companion site plugin repo
 

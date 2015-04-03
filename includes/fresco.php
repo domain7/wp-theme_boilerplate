@@ -11,7 +11,7 @@
  * @internal only called by `post_gallery` filter
  *
  */
-function mbt_gallery_shortcode( $output = '', $atts, $content = false, $tag = false ) {
+function d7_gallery_shortcode( $output = '', $atts, $content = false, $tag = false ) {
 
 	// Get thumbnail size
 	$size = isset($atts['size']) ? $atts['size'] : 'thumbnail';
@@ -54,7 +54,7 @@ function mbt_gallery_shortcode( $output = '', $atts, $content = false, $tag = fa
 	return $output;
 
 }
-add_filter( 'post_gallery', 'mbt_gallery_shortcode', 10, 4 );
+add_filter( 'post_gallery', 'd7_gallery_shortcode', 10, 4 );
 
 
 /**
@@ -67,7 +67,7 @@ add_filter( 'post_gallery', 'mbt_gallery_shortcode', 10, 4 );
  * @todo figure out how to write regex to match the link around the image and add a fresco class to that
  *
  */
-function add_fresco_class($content) {
+function d7_add_fresco_class($content) {
 
    global $post;
 
@@ -79,7 +79,7 @@ function add_fresco_class($content) {
    return $content;
 
 }
-add_filter('the_content', 'add_fresco_class');
+add_filter('the_content', 'd7_add_fresco_class');
 
 
 /**
