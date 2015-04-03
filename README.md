@@ -30,14 +30,6 @@ Follow these steps to set up a shiney new Wordpress theme, complete with sassypl
 * After cloning sassyplate into your theme, move the contents of /sassyplate into the theme (except the .git directory, .gitignore and readme.md files).
 * Replace the existing images directory with the one from sassyplate. Delete the sassyplate directory and what's left in it (git directory, .gitignore file, readme.md).
 
-### Grunt for awhile (to do: use better pun here)
-
-* Clone gruntyplate into the theme ( git@bitbucket.org:domain7/gruntyplate.git )
-* After cloning gruntyplate into your theme, move contents of /gruntyplate into the theme (except the .git directory, .gitignore and readme.md files). Replace existing js directory of the theme with the one from gruntyplate. Delete the gruntyplate directory and what's left in it (git directory, .gitignore file, readme.md).
-* Go into package.json and customize the top area with project specific information. The name you enter will be the name of your compiled js file in /js/build/
-* Open the includes/scripts.php file, and on line 40, change the location of jQuery script (in gruntyplate its js/src/vendor/jquery-2.0.0.min.js)
-* Also in includes/scripts.php, and on line 85, change the reference to /js/main.js to the project script file (in this case, /js/build/enterpriseonline.min.js)
-
 ### Activate Theme
 In wordpress admin, go to appearance / themes and activate your new wordpress theme.
 
