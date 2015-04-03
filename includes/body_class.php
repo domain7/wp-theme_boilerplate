@@ -18,6 +18,7 @@ add_filter('body_class','d7_body_classes');
  * @subpackage boilerplate-theme_filters+hooks
  *
  * @internal Called by `body_class` filter
+ *
  */
 function d7_body_classes($classes, $class='') {
 	global $wp_query;

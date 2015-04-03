@@ -11,6 +11,7 @@ include_once 'includes/login_page.php'; // Customize admin login
 include_once 'includes/body_class.php'; // Expand body classes
 require_once 'includes/post_classes.php'; // Expand post classes
 require_once 'includes/menu_classes.php'; // Expand menu classes
+require_once 'includes/fresco.php'; // Uses fresco.js for gallery and content images
 
 // Template functions. If order is important, replace this and require each file separately.
 foreach (glob(dirname(__FILE__) . '/includes/template_functions/*.php') as $filename) {
