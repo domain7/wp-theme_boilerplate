@@ -1,6 +1,8 @@
 # WordPress boilerplate theme
 
-A boilerplate theme for WordPress with an emphasis on simplicity and reuse. By default, all pages except the homepage are rendered with archive.php. Use front-page.php for your homepage, then you can use index.php for everything else. If it gets weird, refer to [The Flowchart Of Template Witchcraft and Wizardry](http://codex.wordpress.org/File:wp-template-hierarchy.jpg) to determine which template file to add.
+A boilerplate theme for WordPress with an emphasis on simplicity and reuse. By default, all pages except the homepage are rendered with archive.php. Use front-page.php for your homepage, then you can use index.php for everything else. If it gets weird, refer to [The Flowchart Of Template Witchcraft and Wizardry](http://codex.wordpress.org/File:wp-template-hierarchy.jpg) to determine which template file to add; probably archive-{post_type}.php or single-{post_type}.php
+
+For a guide to how the index.php structure works, refer to this template guide: https://dl.dropboxusercontent.com/u/12609261/WordPress%20Template%20Guide.pdf
 
 Less is more. Only create as many custom templates as you need. Think modularly.
 
