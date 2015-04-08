@@ -30,10 +30,14 @@
 		<h1 class="site_name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<?php
 
+			/**
+			 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
+			 */
 			wp_nav_menu( array(
 				'container' => 'nav',
 				'container_id' => 'primary_nav',
-				'theme_location' => 'primary'
+				'theme_location' => 'primary',
+				'depth' => 1
 				)
 			);
 

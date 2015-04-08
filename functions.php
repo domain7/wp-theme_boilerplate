@@ -17,5 +17,3 @@ require_once 'includes/fresco.php'; // Uses fresco.js for gallery and content im
 foreach (glob(dirname(__FILE__) . '/includes/template_functions/*.php') as $filename) {
 	require_once($filename);
 }
-
-?>
