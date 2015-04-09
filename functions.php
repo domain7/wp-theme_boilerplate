@@ -4,6 +4,7 @@
 include_once 'includes/theme_setup.php'; // stylesheet_uri, after_setup_theme, cleanup head
 include_once 'includes/sidebars.php'; // core sidebar registration
 include_once 'includes/menus.php'; // core menu registration
+include_once 'includes/sub_menu.php'; // sub menu hook
 include_once 'includes/image_sizes.php'; // image size definitions
 include_once 'includes/scripts.php'; // Enqued Scripts
 include_once 'includes/cpt_archives.php'; // Add custom post types to wp_get_archives
