@@ -31,9 +31,9 @@
 						 */
 
 						if ( is_archive() || is_search() ) {
-							get_template_part( 'partials/listing', get_post_type() );
+							get_template_part('partials/listing', get_post_type());
 						} else {
-							get_template_part( 'partials/content', get_post_type() );
+							get_template_part('partials/content', get_post_type());
 						}
 
 					endwhile;
@@ -44,19 +44,19 @@
 					}
 
 					// Pagination
-					get_template_part('partials/pagination');
+					get_template_part('partials/pagination', get_post_type());
 
 				else :
 
 					// If no content, include the "No posts found" template.
-					get_template_part( 'partials/content', 'none' );
+					get_template_part('partials/content', 'none');
 
 				endif;
 			?>
 
 		</section><!--  #main_content-->
 
-		<?php get_sidebar(); ?>
+		<?php get_sidebar(get_post_type()); ?>
 
 	</section><!--  #main -->
 
