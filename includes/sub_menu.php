@@ -95,6 +95,8 @@ function d7_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 
 		} // Not direct_parent
 
+		$menu_item_parents = [];
+
 		// Loop through items and unset ones outside of the tree
 		foreach ( $sorted_menu_items as $key => $item ) {
 
