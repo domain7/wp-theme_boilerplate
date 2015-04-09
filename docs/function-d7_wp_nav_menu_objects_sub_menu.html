@@ -116,33 +116,35 @@ options are also added</p>
 <pre><span class="xlang">&lt;?php</span>
 wp_nav_menu( <span class="php-keyword1">array</span>(
 
-	<span class="php-comment">// Normal wp_nav_menu stuff</span>
-	<span class="php-quote">'theme_location'</span> =&gt; <span class="php-quote">'primary'</span>,
-	<span class="php-quote">'container'</span> =&gt; <span class="php-quote">'nav'</span>,
-	<span class="php-quote">'container_class'</span> =&gt; <span class="php-quote">'menu subnav'</span>,
-	<span class="php-quote">'depth'</span> =&gt; <span class="php-num">2</span>,
+    <span class="php-comment">// Normal wp_nav_menu stuff</span>
+    <span class="php-quote">'theme_location'</span> =&gt; <span class="php-quote">'primary'</span>,
+    <span class="php-quote">'container'</span> =&gt; <span class="php-quote">'nav'</span>,
+    <span class="php-quote">'container_class'</span> =&gt; <span class="php-quote">'menu subnav'</span>,
+    <span class="php-quote">'depth'</span> =&gt; <span class="php-num">2</span>,
 
-	<span class="php-comment">// Added argument to enable sub-menus</span>
-	<span class="php-quote">'sub_menu'</span> =&gt; <span class="php-keyword1">true</span>,
+    <span class="php-comment">// Added argument to enable sub-menus</span>
+    <span class="php-quote">'sub_menu'</span> =&gt; <span class="php-keyword1">true</span>,
 
-	<span class="php-comment">// Additional added arguments with defaults</span>
-	<span class="php-quote">'expand_siblings'</span> =&gt; <span class="php-keyword1">false</span>, <span class="php-comment">// Whether or not sibling menu items's children should be expanded</span>
-	<span class="php-quote">'direct_parent'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-comment">// Only use the current item as parent, or climb the tree</span>
-	<span class="php-quote">'show_parent'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-comment">// Show the top level parent (probably the section name)</span>
-	<span class="php-quote">'no_results_hide_parent'</span> =&gt; <span class="php-keyword1">true,</span> <span class="php-comment">// If show_parent is enabled but there's no menu, then hide the parent too</span>
-	<span class="php-quote">'limit_depth_no_active'</span> =&gt; <span class="php-keyword1">true</span> <span class="php-comment">// If we're on a page where none of the subnav items are open, limit depth to 1</span>
+    <span class="php-comment">// Additional added arguments with defaults</span>
+    <span class="php-quote">'expand_siblings'</span> =&gt; <span class="php-keyword1">false</span>, <span class="php-comment">// Whether or not sibling menu items's children should be expanded</span>
+    <span class="php-quote">'direct_parent'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-comment">// Only use the current item as parent, or climb the tree</span>
+    <span class="php-quote">'show_parent'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-comment">// Show the top level parent (probably the section name)</span>
+    <span class="php-quote">'no_results_hide_parent'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-comment">// If show_parent is enabled but there's no menu, then hide the parent too</span>
+    <span class="php-quote">'limit_depth_no_active'</span> =&gt; <span class="php-keyword1">true</span> <span class="php-comment">// If we're on a page where none of the subnav items are open, limit depth to 1</span>
     )
 );
 <span class="xlang">?&gt;</span></pre>
 	</div>
 
 	<div class="alert alert-info">
-
+		
 		<b>Package:</b> <a href="package-d7.html">d7</a>\<a href="package-d7.boilerplate.theme.html">boilerplate-theme</a>\<a href="package-d7.boilerplate.theme.filters.hooks.html">filters+hooks</a><br>
 				<b>Link:</b>
 				<a href="https://codex.wordpress.org/Function_Reference/wp_nav_menu">https://codex.wordpress.org/Function_Reference/wp_nav_menu</a><br>
 				<b>Link:</b>
 				<a href="https://developer.wordpress.org/reference/hooks/wp_nav_menu_objects/">https://developer.wordpress.org/reference/hooks/wp_nav_menu_objects/</a><br>
+				<b>Internal:</b>
+				Only used in a <code>wp_nav_menu_objects</code> hook<br>
 		<b>Located at</b>
 		<a href="source-function-d7_wp_nav_menu_objects_sub_menu.html#3-178" title="Go to source code">
 			sub_menu.php
