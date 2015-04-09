@@ -13,21 +13,21 @@
  * <?php
  * wp_nav_menu( array(
  *
- * 		// Normal wp_nav_menu stuff
+ *		// Normal wp_nav_menu stuff
  *		'theme_location' => 'primary',
  *		'container' => 'nav',
  *		'container_class' => 'menu subnav',
  *		'depth' => 2,
  *
- * 		// Added argument to enable sub-menus
- * 		'sub_menu' => true,
+ *		// Added argument to enable sub-menus
+ *		'sub_menu' => true,
  *
- * 		// Additional added arguments with defaults
- * 		'expand_siblings' => false, // Whether or not sibling menu items's children should be expanded
+ *		// Additional added arguments with defaults
+ *		'expand_siblings' => false, // Whether or not sibling menu items's children should be expanded
  *		'direct_parent' => true, // Only use the current item as parent, or climb the tree
  *		'show_parent' => true, // Show the top level parent (probably the section name)
- *		'no_results_hide_parent' => true // If show_parent is enabled but there's no menu, then hide the parent too
- * 		'limit_depth_no_active' => true // If we're on a page where none of the subnav items are open, limit depth to 1
+ *		'no_results_hide_parent' => true, // If show_parent is enabled but there's no menu, then hide the parent too
+ *		'limit_depth_no_active' => true // If we're on a page where none of the subnav items are open, limit depth to 1
  *		)
  *	);
  *	?>
