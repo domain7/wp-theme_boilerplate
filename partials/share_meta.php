@@ -38,7 +38,8 @@
 	 * URL
 	 */
 
-	$meta['url'] = $_SERVER['HTTP_REFERER'];
+	$meta['url'] = empty($_SERVER['HTTPS']) ? 'http' : 'https';
+	$meta['url'] .= '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 
 
