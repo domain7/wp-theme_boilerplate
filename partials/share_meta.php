@@ -1,5 +1,13 @@
 <?php
 
+	/**
+	 * ===
+	 * This first section creates our meta tag values
+	 * ===
+	 *
+	 */
+
+
 	$meta = array();
 
 
@@ -80,13 +88,21 @@
 
 
 	/**
+	 * ===
+	 * This section prints the tag values in their various formats
+	 * ===
+	 *
+	 */
+
+
+	/**
 	 * Print open graph tags
 	 */
 
-	$open_graph_attributes = array('title', 'site_name', 'ur', 'description', 'image');
+	$open_graph_attributes = array('title', 'site_name', 'url', 'description', 'image');
 
 	foreach ( $meta as $tag => $value ) {
-		if ( $value ) {
+		if ( $value && in_array($tag, $open_graph_attributes) ) {
 			echo '<meta property="og:' . $tag . '" content="' . $value . '" />' . "\n";
 		}
 	}
