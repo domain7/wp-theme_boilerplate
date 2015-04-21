@@ -21,7 +21,7 @@ Please refer to this project's function reference documentation: http://domain7.
 
 Since post types and core site functionality shouldn't be defined in the theme but rather a plugin, Domain7 has site plugin boilerplate repo as a companion to this one: https://github.com/domain7/wp-plugin_boilerplate.
 
-## Tweaks
+## Tweaks & features
 
 ### Open Graph and Twitter card tags
 
@@ -30,6 +30,23 @@ Basic open graph and Twitter card tags are printed in `partials/share_meta.php`.
 For more info:
 * [Open Graph](http://ogp.me/)
 * [Twitter Cards](https://dev.twitter.com/cards/overview)
+
+### wp_get_archives
+
+We've added the ability to pass a post type slug, or array of post type slugs, into `wp_get_archives()`. The archive page
+linked to will also be filtered by that post type.
+
+Example:
+
+	echo wp_get_archives(array(
+		'post_type' => 'car'
+	));
+
+or
+
+	echo wp_get_archives(array(
+		'post_type' => array('car', 'board')
+	));
 
 ## Setting up wp-theme_boilerplate with Sassyplate, Gruntyplate, and the wp-plugin_boilerplate
 
