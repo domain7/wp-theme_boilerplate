@@ -14,7 +14,7 @@
 	 * @package d7
 	 * @subpackage boilerplate-theme
 	 *
-	 * @param array  $image 				Image array as returned by ACF
+	 * @param array|string  $image 			Image array as returned by ACF, or field name as a string
 	 * @param string $size 					Image size
 	 * @param string $classes 				Classes to be added
 	 * @link http://www.advancedcustomfields.com/resources/image/
@@ -22,6 +22,18 @@
 	 *
 	 */
 	function d7_get_acf_image($image, $size, $classes) {
+
+		// Bail early if there's no image
+		if ( !is_array($image) ) {
+
+			// Maybe it's a string with a field name?
+			$field = get_field($image);
+			if ( $field ) {
+				$image = $field;
+			} else {
+				return false;
+			}
+		}
 
 		$img = '<img src="' . $image['sizes'][$size] . '"';
 
@@ -66,8 +78,13 @@
 	 * @link http://www.advancedcustomfields.com/resources/image/
 	 *
 	 */
-	function d7_acf_image($image, $size, $classes) {
-		echo d7_get_acf_image($image, $size, $classes);
+	function d7_acf_image($image, $size = 'thumbnail', $classes) {
+
+		$image = d7_get_acf_image($image, $size, $classes);
+		if ( $image ) {
+			echo $image;
+		}
+
 	}
 
 
