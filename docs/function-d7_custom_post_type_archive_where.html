@@ -106,6 +106,16 @@
 	<div class="description">
 	<p>This allows you to pass a <code>post_type</code> argument to wp_get_archives
 as a string or an array.</p>
+
+<h2>Usage:</h2>
+
+<pre><span class="php-keyword1">echo</span> wp_get_archives(<span class="php-keyword1">array</span>(
+    <span class="php-quote">'post_type'</span> =&gt; <span class="php-quote">'car'</span>,
+));</pre>
+
+<pre><span class="php-var">$archives</span> = wp_get_archives(<span class="php-keyword1">array</span>(
+    <span class="php-quote">'post_type'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'car'</span>, <span class="php-quote">'board'</span>)
+));</pre>
 	</div>
 
 	<div class="alert alert-info">
@@ -113,10 +123,8 @@ as a string or an array.</p>
 		<b>Package:</b> <a href="package-d7.html">d7</a>\<a href="package-d7.boilerplate.theme.html">boilerplate-theme</a>\<a href="package-d7.boilerplate.theme.filters.hooks.html">filters+hooks</a><br>
 				<b>Link:</b>
 				<a href="http://codex.wordpress.org/Function_Reference/wp_get_archives">Docs on wp_get_archives()</a><br>
-				<b>Internal:</b>
-				only called by <code>getarchives_where</code> filter<br>
 		<b>Located at</b>
-		<a href="source-function-d7_custom_post_type_archive_where.html#3-41" title="Go to source code">
+		<a href="source-function-d7_custom_post_type_archive_where.html#5-62" title="Go to source code">
 			cpt_archives.php
 		</a><br>
 	</div>
