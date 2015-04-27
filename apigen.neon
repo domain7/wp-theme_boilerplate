@@ -1,0 +1,6 @@
+title: Domain7 WP Theme Boilerplate
+source: includes
+destination: docs
+templateTheme: bootstrap
+todo: true
+internal: true
