@@ -22,7 +22,7 @@
 
 		// Grab ACF fields
 		$acf = false;
-		if ( function_exists('get_fields') ) {
+		if ( function_exists('get_field_objects') ) {
 			$acf = get_field_objects($id);
 		}
 
