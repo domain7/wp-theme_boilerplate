@@ -17,7 +17,7 @@
 	<ol id="commentlist">
 	<?php wp_list_comments('avatar_size=45'); ?>
 	</ol>
-	
+
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
 			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'lps_basic' ); ?></h3>
@@ -30,11 +30,6 @@
 
 	<?php if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
-
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
-
 	<?php endif; ?>
 <?php endif; ?>
 

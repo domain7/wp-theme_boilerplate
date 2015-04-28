@@ -25,6 +25,18 @@
 			$classes[] = 'has-post-thumbnail';
 		}
 
+		// Has comments or not
+		if ( comments_open() && get_comments_number() ) {
+			$classes[] = "has-comments";
+		} else {
+			$classes[] = "no-comments";
+		}
+
+		// Comments open/closed
+		if ( comments_open() ) {
+			$classes[] = "can-comment";
+		}
+
 		return $classes;
 
 	}
