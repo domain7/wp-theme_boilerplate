@@ -168,9 +168,24 @@
 </span><span id="64" class="l"><a href="#64">64 </a>        <span class="php-var">$classes</span>[] = <span class="php-quote">'has-post-thumbnail'</span>;
 </span><span id="65" class="l"><a href="#65">65 </a>    }
 </span><span id="66" class="l"><a href="#66">66 </a>
-</span><span id="67" class="l"><a href="#67">67 </a>    <span class="php-keyword1">return</span> <span class="php-var">$classes</span>;<span class="php-comment">// return the $classes array</span>
-</span><span id="68" class="l"><a href="#68">68 </a>}
-</span><span id="69" class="l"><a href="#69">69 </a></span></code></pre>
+</span><span id="67" class="l"><a href="#67">67 </a>    <span class="php-comment">// Has comments or not</span>
+</span><span id="68" class="l"><a href="#68">68 </a>    <span class="php-keyword1">if</span> ( comments_open() &amp;&amp; get_comments_number() ) {
+</span><span id="69" class="l"><a href="#69">69 </a>        <span class="php-var">$classes</span>[] = <span class="php-quote">&quot;has-comments&quot;</span>;
+</span><span id="70" class="l"><a href="#70">70 </a>    } <span class="php-keyword1">else</span> {
+</span><span id="71" class="l"><a href="#71">71 </a>        <span class="php-var">$classes</span>[] = <span class="php-quote">&quot;no-comments&quot;</span>;
+</span><span id="72" class="l"><a href="#72">72 </a>    }
+</span><span id="73" class="l"><a href="#73">73 </a>
+</span><span id="74" class="l"><a href="#74">74 </a>    <span class="php-comment">// Comments open/closed</span>
+</span><span id="75" class="l"><a href="#75">75 </a>    <span class="php-keyword1">if</span> ( comments_open() ) {
+</span><span id="76" class="l"><a href="#76">76 </a>        <span class="php-var">$classes</span>[] = <span class="php-quote">&quot;can-comment&quot;</span>;
+</span><span id="77" class="l"><a href="#77">77 </a>    }
+</span><span id="78" class="l"><a href="#78">78 </a>
+</span><span id="79" class="l"><a href="#79">79 </a>    <span class="php-comment">// Classes for sidebars</span>
+</span><span id="80" class="l"><a href="#80">80 </a>    <span class="php-var">$classes</span>[] = d7_sidebar_classes();
+</span><span id="81" class="l"><a href="#81">81 </a>
+</span><span id="82" class="l"><a href="#82">82 </a>    <span class="php-keyword1">return</span> <span class="php-var">$classes</span>;<span class="php-comment">// return the $classes array</span>
+</span><span id="83" class="l"><a href="#83">83 </a>}
+</span><span id="84" class="l"><a href="#84">84 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
@@ -178,6 +193,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?2d1b11028defa2366a18dd5e1addc1c7d8076a23"></script>
-<script src="elementlist.js?ee79011b6cab4daad4c263dd65d7502c86182c5f"></script>
+<script src="elementlist.js?48b8d49965fe861341dd632a736f9fce876f550e"></script>
 </body>
 </html>
