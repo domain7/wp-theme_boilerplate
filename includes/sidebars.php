@@ -22,3 +22,50 @@ function d7_register_sidebars() {
 		)
 	);
 }
+
+
+/**
+ * Add classes for the active sidebars
+ *
+ * @package d7
+ * @subpackage boilerplate-theme
+ *
+ */
+function d7_sidebar_classes() {
+
+	$sidebars = $GLOBALS['wp_registered_sidebars'];
+	$class = false;
+	$active_count = 0;
+
+	// Add the number of sidebars
+	if ( count($sidebars) ) {
+
+		// Loop through active sidebars and return a classes string
+		foreach ( $sidebars as $sidebar => $settings ) {
+
+			// If it's active
+			if ( is_active_sidebar($settings['id']) ) {
+
+				// Name class
+				$class .= 'has-sidebar-' . $sidebar . ' ';
+
+				// Increment count
+				$active_count++;
+			}
+
+		} // foreach
+
+		// If there are sidebars, add the count too
+		if ( $active_count ) {
+			$class .= 'has-sidebars-' . $active_count;
+		}
+
+	} else {
+
+		$class = 'no-sidebars';
+
+	}
+
+	return $class;
+
+}

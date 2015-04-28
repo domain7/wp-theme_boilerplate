@@ -71,11 +71,13 @@ function d7_body_classes($classes, $class='') {
 		$classes[] = "no-comments";
 	}
 
-
 	// Comments open/closed
 	if ( comments_open() ) {
 		$classes[] = "can-comment";
 	}
+
+	// Classes for sidebars
+	$classes[] = d7_sidebar_classes();
 
 	return $classes;// return the $classes array
 }
