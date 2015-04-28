@@ -18,23 +18,36 @@
 			$classes[] = 'listing-item';
 		}
 
-		// Has image
+		// Has feature image
 		if ( has_post_thumbnail() ) {
 			// Using a dash instead of underscore because WP turns it
 			// into that anyway and I want to be more transparent
 			$classes[] = 'has-post-thumbnail';
 		}
 
+		// Has other acf images, add classes for those
+		$fields = get_fields();
+
+		foreach ( $fields as $field => $field_content ) {
+
+			if ( isset($field_content['sizes']) && count($field_content['sizes']) ) {
+
+				$classes[] = 'has-image-' . $field;
+
+			}
+
+		}
+
 		// Has comments or not
 		if ( comments_open() && get_comments_number() ) {
-			$classes[] = "has-comments";
+			$classes[] = 'has-comments';
 		} else {
-			$classes[] = "no-comments";
+			$classes[] = 'no-comments';
 		}
 
 		// Comments open/closed
 		if ( comments_open() ) {
-			$classes[] = "can-comment";
+			$classes[] = 'can-comment';
 		}
 
 		return $classes;
