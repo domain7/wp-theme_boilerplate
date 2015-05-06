@@ -14,12 +14,6 @@
 			'sub_menu' => true
 			)
 		);
-
-		echo wp_get_archives(array(
-			'post_type' => 'car',
-			'type' => 'monthly'
-		));
-
 	?>
 
 	<?php if ( is_active_sidebar( 'primary' ) ) : ?>
