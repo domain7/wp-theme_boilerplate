@@ -46,7 +46,7 @@ function d7_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
  * @subpackage boilerplate-theme\filters+hooks
  * @uses d7_stylesheet_uri()
  * @link http://codex.wordpress.org/Function_Reference/wp_enqueue_style
- * @internal the '15' in the add_action forces the file to load after the default styles.
+ * @internal the '15' in the add_action forces the file to load after the other styles in wp_head().
  *
  */
 function d7_enqueue_styles() {
