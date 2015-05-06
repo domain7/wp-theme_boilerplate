@@ -47,16 +47,19 @@
 		}
 
 		// Loop through ACF fields too
-		foreach ( $acf as $key => $value ) {
 
-			// Exclude underscore prefixed keys
-			if ( substr($key, 0, 1) == '_' ) {
-				continue;
-			}
+		if ( $acf ) {
+			foreach ( $acf as $key => $value ) {
 
-			// Only doing text fields
-			if ( $value['type'] == 'text' ) {
-				$custom_fields[$value['label']][] = get_field($value['name']);
+				// Exclude underscore prefixed keys
+				if ( substr($key, 0, 1) == '_' ) {
+					continue;
+				}
+
+				// Only doing text fields
+				if ( $value['type'] == 'text' ) {
+					$custom_fields[$value['label']][] = get_field($value['name']);
+				}
 			}
 		}
 

@@ -72,7 +72,7 @@
 	 */
 
 	// Day
-	add_filter('day_link', function($daylink) {
+	add_filter('day_link', function($daylink = false) {
 
 		global $is_cpt_archive;
 
@@ -86,7 +86,7 @@
 	});
 
 	// Month
-	add_filter('month_link', function($monthlink, $year, $month) {
+	add_filter('month_link', function($monthlink = false, $year = false, $month = false) {
 
 		global $is_cpt_archive;
 
@@ -100,7 +100,7 @@
 	});
 
 	// Year
-	add_filter('year_link', function($yearlink, $year) {
+	add_filter('year_link', function($yearlink = false, $year = false) {
 
 		global $is_cpt_archive;
 
