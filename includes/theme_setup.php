@@ -50,7 +50,7 @@ function d7_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
  *
  */
 function d7_enqueue_styles() {
-    wp_enqueue_style('theme-stylesheet',  d7_stylesheet_uri() );
+    wp_enqueue_style('theme-stylesheet',  get_bloginfo( 'stylesheet_url' ) );
 }
 add_action( 'wp_enqueue_scripts', 'd7_enqueue_styles', 15 );
 
