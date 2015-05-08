@@ -12,6 +12,6 @@ add_action('init', 'd7_register_menus');
  */
 function d7_register_menus() {
 	register_nav_menus(array(
-		'primary' => __('Primary Nav')
+		'primary' => __('Primary Nav', 'Admin - ' . get_bloginfo('name')  )
 	));
 }

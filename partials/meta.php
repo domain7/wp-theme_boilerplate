@@ -19,7 +19,7 @@
 	<!-- Category -->
 	<?php if ( $category ): ?>
 		<li class="post_meta-item category">
-			<span class="post_meta-key"><?php _e('Category'); ?>: </span>
+			<span class="post_meta-key"><?php _e('Category', get_bloginfo('name') ); ?>: </span>
 			<span class="post_meta-value"><?php the_category(', ') ?></span>
 		</li>
 	<?php endif; ?>
