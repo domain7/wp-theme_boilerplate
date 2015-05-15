@@ -119,6 +119,6 @@
 
 	foreach ( $meta as $tag => $value ) {
 		if ( $value && in_array($tag, $twitter_card_attributes) ) {
-			echo '<meta property="twitter:' . $tag . '" content="' . $value . '" />' . "\n";
+			echo '<meta name="twitter:' . $tag . '" content="' . $value . '" />' . "\n";
 		}
 	}
