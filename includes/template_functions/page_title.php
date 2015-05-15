@@ -17,24 +17,24 @@
 		if ( is_category() ) {
 			$title .= single_cat_title("", false);
 		} elseif( is_tag() ) {
-			$title .= 'Content tagged: ' . single_tag_title("", false);
+			$title .= __('Content tagged: ', get_bloginfo('name') ) . single_tag_title("", false);
 		} elseif (is_day()) {
-			$title .= 'Archive for ' . get_the_time('F jS, Y');
+			$title .= __('Archive for ', get_bloginfo('name') ) . get_the_time('F jS, Y');
 		} elseif (is_month()) {
-			$title .= __('Archive for') . ' ' . get_the_time('F, Y');
+			$title .= __('Archive for', get_bloginfo('name') ) . ' ' . get_the_time('F, Y');
 		} elseif (is_year()) {
-			$title .= __('Archive for') . ' ' . get_the_time('Y');
+			$title .= __('Archive for', get_bloginfo('name') ) . ' ' . get_the_time('Y');
 		} elseif (is_search()) {
-			$title .= __('Search results');
+			$title .= __('Search results', get_bloginfo('name') );
 			if ( isset($_GET['s']) ) {
-				$title .= ' ' . __('for') . ' <span class="search_term">&quot;' . $_GET['s'] . '&quot;</span>';
+				$title .= ' ' . __('for', get_bloginfo('name') ) . ' <span class="search_term">&quot;' . $_GET['s'] . '&quot;</span>';
 			}
 		} elseif (is_author()) {
-			$title .= __('Author archive');
+			$title .= __('Author archive', get_bloginfo('name') );
 		} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
 			$title .= __('Archives');
 		} elseif (is_404()) {
-			$title .= __('Oh darn!');
+			$title .= __('Oh darn!', get_bloginfo('name') );
 		} else {
 			$title .= bloginfo('name');
 		}

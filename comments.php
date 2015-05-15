@@ -4,7 +4,7 @@
 		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', get_bloginfo('name') ); ?></p>
 	<?php
 		return;
 	}
@@ -20,9 +20,9 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'lps_basic' ); ?></h3>
-			<div class="nav-previous"><?php previous_comments_link( __( '&laquo; Older Comments', 'lps_basic' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'lps_basic' ) ); ?></div>
+			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', get_bloginfo('name') ); ?></h3>
+			<div class="nav-previous"><?php previous_comments_link( __( '&laquo; Older Comments', get_bloginfo('name') ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', get_bloginfo('name') ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
