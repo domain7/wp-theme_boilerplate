@@ -3,7 +3,7 @@
 	/**
 	 * Image sizes
 	 *
-	 * Documentation:http://codex.wordpress.org/Function_Reference/register_nav_menus
+	 * @link https://codex.wordpress.org/Function_Reference/add_image_size
 	 *
 	 */
 
