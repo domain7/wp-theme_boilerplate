@@ -37,8 +37,9 @@
 			 */
 			wp_nav_menu( array(
 				'container' => 'nav',
-				'container_id' => 'primary_nav',
+				'container_class' => 'primary-nav',
 				'theme_location' => 'primary',
+				'menu_class' => 'primary-nav__items',
 				'depth' => 1
 				)
 			);
