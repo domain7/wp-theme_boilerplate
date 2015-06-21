@@ -4,7 +4,7 @@
 
 		<section id="main_content">
 
-			<?php if ( !is_single() && !is_page() ): ?>
+			<?php if ( !is_single() && !is_page() && !is_home() ): ?>
 				<h2 class="page_title"><?php wp_title(false); ?></h2>
 			<?php endif; ?>
 
