@@ -21,7 +21,7 @@
 	 * @return string 						HTML output
 	 *
 	 */
-	function d7_get_acf_image($image, $size = 'thumbnail', $classes) {
+	function d7_get_acf_image($image, $size = 'thumbnail', $classes = '') {
 
 		// Bail early if there's no image
 		if ( !is_array($image) ) {
@@ -78,7 +78,7 @@
 	 * @link http://www.advancedcustomfields.com/resources/image/
 	 *
 	 */
-	function d7_acf_image($image, $size = 'thumbnail', $classes) {
+	function d7_acf_image($image, $size = 'thumbnail', $classes = '') {
 
 		$image = d7_get_acf_image($image, $size, $classes);
 		if ( $image ) {
