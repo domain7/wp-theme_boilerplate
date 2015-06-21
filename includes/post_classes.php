@@ -30,10 +30,9 @@
 
 		foreach ( $fields as $field => $field_content ) {
 
-			if ( isset($field_content['sizes']) && count($field_content['sizes']) ) {
-
+			if ( is_array($field_content) && isset($field_content['sizes']) && count($field_content['sizes']) ) {
+				$classes[] = 'has-image';
 				$classes[] = 'has-image-' . $field;
-
 			}
 
 		}
