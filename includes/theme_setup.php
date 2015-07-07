@@ -39,6 +39,21 @@ function d7_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
 	return $stylesheet_dir_uri . '/stylesheets/css/screen.css';
 }
 
+/**
+ * Use wp_enqueue to add theme stylesheet to wp_head()
+ *
+ * @package d7
+ * @subpackage boilerplate-theme\filters+hooks
+ * @uses d7_stylesheet_uri()
+ * @link http://codex.wordpress.org/Function_Reference/wp_enqueue_style
+ * @internal the '15' in the add_action forces the file to load after the other styles in wp_head().
+ *
+ */
+function d7_enqueue_styles() {
+    wp_enqueue_style('theme-stylesheet',  get_bloginfo( 'stylesheet_url' ) );
+}
+add_action( 'wp_enqueue_scripts', 'd7_enqueue_styles', 15 );
+
 // Clean up <head> and improve security.
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
