@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
-	<section id="main">
+	<div class="l-main">
 
-		<section id="main_content">
+		<section class="l-content">
+
+			<h2 class="u-screen-reader">Main content</h2>
 
 			<?php if ( !is_single() && !is_page() && !is_home() ): ?>
-				<h2 class="page_title"><?php wp_title(false); ?></h2>
+				<h1 class="page-title"><?php wp_title(false); ?></h1>
 			<?php endif; ?>
 
 			<?php
@@ -54,10 +56,10 @@
 				endif;
 			?>
 
-		</section><!--  #main_content-->
+		</section><!--  .l-content-->
 
 		<?php get_sidebar(get_post_type()); ?>
 
-	</section><!--  #main -->
+	</div><!--  .l-main -->
 
 <?php get_footer(); ?>

@@ -13,9 +13,10 @@
 
 		// Full post or listing item
 		if (is_single() || is_page()) {
-			$classes[] = 'post-full';
+			$classes[] = 'post';
+			$classes[] = 'post--full';
 		} else {
-			$classes[] = 'listing-item';
+			$classes[] = 'listing__item';
 		}
 
 		// Has feature image
@@ -26,13 +27,17 @@
 		}
 
 		// Has other acf images, add classes for those
-		$fields = get_fields();
+		if ( function_exists('get_fields') ) {
 
-		foreach ( $fields as $field => $field_content ) {
+			$fields = get_fields();
 
-			if ( is_array($field_content) && isset($field_content['sizes']) && count($field_content['sizes']) ) {
-				$classes[] = 'has-image';
-				$classes[] = 'has-image-' . $field;
+			foreach ( $fields as $field => $field_content ) {
+
+				if ( is_array($field_content) && isset($field_content['sizes']) && count($field_content['sizes']) ) {
+					$classes[] = 'has-image';
+					$classes[] = 'has-image-' . $field;
+				}
+
 			}
 
 		}

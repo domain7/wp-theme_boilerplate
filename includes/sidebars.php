@@ -14,11 +14,12 @@ function d7_register_sidebars() {
 		array(
 			'id' => 'primary',
 			'name' => __( 'Primary Sidebar', 'Admin - ' . get_bloginfo('name')  ),
+			'class' => 'foo',
 			'description' => __( 'The following widgets will appear in the main sidebar div.', 'Admin - ' . get_bloginfo('name') ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4>',
-			'after_title' => '</h4>'
+			'before_widget' => '<div id="%1$s" class="widget widget--%2$s">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<h4 class="widget__title">',
+			'after_title' => '</h4><div class="widget__body">'
 		)
 	);
 }

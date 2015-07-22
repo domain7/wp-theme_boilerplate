@@ -27,8 +27,8 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<header id="masthead">
-		<h1 class="site_name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<header class="masthead">
+		<h1 class="site-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<?php
 
 			/**
@@ -39,6 +39,7 @@
 				'container_class' => 'primary-nav',
 				'theme_location' => 'primary',
 				'menu_class' => 'primary-nav__items',
+				'items_wrap' => '<h2 class="u-screen-reader">Main menu</h2><ul class="%2$s">%3$s</ul>',
 				'depth' => 1
 				)
 			);

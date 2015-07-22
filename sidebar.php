@@ -1,4 +1,4 @@
-<section id="sidebar">
+<div class="l-sidebar">
 
 	<?php
 		/**
@@ -20,4 +20,4 @@
 		<?php dynamic_sidebar( 'primary' ); ?>
 	<?php else : ?>
 	<?php endif; ?>
-</section><!--  #sidebar -->
+</div><!--  #sidebar -->

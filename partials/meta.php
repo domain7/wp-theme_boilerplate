@@ -11,29 +11,29 @@
 
 ?>
 
-<ul class="post_meta">
+<ul class="post-meta">
 
 	<!-- Post date -->
-	<li class="date"><?php echo get_the_date(); ?></li>
+	<li class="post-meta__item post-meta__item--date"><?php echo get_the_date(); ?></li>
 
 	<!-- Category -->
 	<?php if ( $category ): ?>
-		<li class="post_meta-item category">
-			<span class="post_meta-key"><?php _e('Category', get_bloginfo('name') ); ?>: </span>
-			<span class="post_meta-value"><?php the_category(', ') ?></span>
+		<li class="post-meta__item post-meta__item--category">
+			<span class="post-meta__key"><?php _e('Category', get_bloginfo('name') ); ?>: </span>
+			<span class="post-meta__value"><?php the_category(', ') ?></span>
 		</li>
 	<?php endif; ?>
 
 	<!-- Tags -->
 	<?php if ( $tags ): ?>
-		<li class="post_meta-item tags"><?php the_tags('',', ',''); ?></li>
+		<li class="post-meta__item post-meta__item--tags"><?php the_tags('',', ',''); ?></li>
 	<?php endif; ?>
 
 	<!-- Custom fields -->
 	<?php foreach ( $custom_fields as $field => $value ) : ?>
-		<li class="post_meta-item custom_field">
-			<span class="post_meta-key"><?php echo $field; ?>: </span>
-			<span class="post_meta-value"><?php echo $value[0]; ?></span>
+		<li class="post-meta__item post-meta__item--custom_field">
+			<span class="post-meta__key"><?php echo $field; ?>: </span>
+			<span class="post-meta__value"><?php echo $value[0]; ?></span>
 		</li>
 	<?php endforeach; ?>
 
