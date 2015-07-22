@@ -92,6 +92,19 @@ function d7_enqueue_jquery() {
 	// Now load basic site js
 	wp_enqueue_script('basic', get_bloginfo('template_directory').'/js/main.js', array('jquery'), '1.0');
 
+	// Add some site information to a WP js object
+	$wp_object = array(
+		'templateUrl' => get_bloginfo('template_url'),
+		'stylesheetUrl' => get_bloginfo('stylesheet_url'),
+		'stylesheetDirectory' => get_bloginfo('stylesheet_directory'),
+		'siteName' => get_bloginfo('name'),
+		'description' => get_bloginfo('description'),
+		'currentTheme' => get_current_theme(),
+		'url' => get_bloginfo('url'),
+	);
+	wp_localize_script('basic', 'WP', $wp_object);
+
+
 	// For comment reply form
 	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
