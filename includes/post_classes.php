@@ -19,28 +19,8 @@
 			$classes[] = 'listing__item';
 		}
 
-		// Has feature image
-		if ( has_post_thumbnail() ) {
-			// Using a dash instead of underscore because WP turns it
-			// into that anyway and I want to be more transparent
-			$classes[] = 'has-post-thumbnail';
-		}
-
-		// Has other acf images, add classes for those
-		if ( function_exists('get_fields') ) {
-
-			$fields = get_fields();
-
-			foreach ( $fields as $field => $field_content ) {
-
-				if ( is_array($field_content) && isset($field_content['sizes']) && count($field_content['sizes']) ) {
-					$classes[] = 'has-image';
-					$classes[] = 'has-image-' . $field;
-				}
-
-			}
-
-		}
+		// Has post thumbnail or other acf images, add classes for those
+		$classes = d7_post_image_classes($classes);
 
 		// Has comments or not
 		if ( comments_open() && get_comments_number() ) {
