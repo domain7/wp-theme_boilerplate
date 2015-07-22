@@ -58,7 +58,9 @@ function d7_body_classes($classes, $class='') {
 	} // if isset
 
 	// Has post thumbnail or other acf images, add classes for those
-	$classes = d7_post_image_classes($classes);
+	if ( !d7_is_listing() ) {
+		$classes = d7_post_image_classes($classes);
+	}
 
 	// Has comments or not
 	if ( comments_open() && get_comments_number() ) {
