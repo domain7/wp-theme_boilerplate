@@ -6,7 +6,7 @@
 
 			<h2 class="u-screen-reader">Main content</h2>
 
-			<?php if ( !is_single() && !is_page() && !is_home() ): ?>
+			<?php if ( d7_is_listing() && !d7_is_home_listing() ): ?>
 				<h1 class="page-title"><?php wp_title(false); ?></h1>
 			<?php endif; ?>
 
@@ -15,7 +15,7 @@
 				if ( have_posts() ) :
 
 					// For listings, add a but of markup
-					if ( is_archive() || is_search() ) {
+					if ( d7_is_listing() ) {
 						echo '<div class="listing">';
 					}
 
@@ -32,7 +32,7 @@
 						 * full content post/page views.
 						 */
 
-						if ( is_archive() || is_search() ) {
+						if ( d7_is_listing() ) {
 							get_template_part('partials/listing', get_post_type());
 						} else {
 							get_template_part('partials/content', get_post_type());
@@ -41,7 +41,7 @@
 					endwhile;
 
 					// For listings, add a but of markup
-					if ( is_archive() || is_search() ) {
+					if ( d7_is_listing() ) {
 						echo '</div>';
 					}
 
