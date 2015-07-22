@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('editable'); ?>>
 
 	<header>
 
@@ -11,5 +11,7 @@
 	<div class="post__content post__content--summary wysiwyg">
 		<?php d7_custom_excerpt(45, "More Info"); ?>
 	</div><!-- .entry-content -->
+
+	<?php edit_post_link('Edit'); ?>
 
 </article><!-- #post-## -->
