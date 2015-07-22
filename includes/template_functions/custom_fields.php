@@ -38,7 +38,8 @@
 			}
 
 			// Skip acf fields
-			if ( $acf && isset($acf[$key]) ) {
+			$split_nesteds = preg_split('(_[0-9]+_)', $key);
+			if ( $acf && isset($acf[$split_nesteds[0]]) ) {
 				continue;
 			}
 
