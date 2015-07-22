@@ -10,16 +10,29 @@
  */
 function d7_custom_login_logo() {
 
+	$logo = false;
+
 	// Create the URL of the logo
-	$logo = '/images/sprites/common-1x/logo.png';
-	$logo_path = get_template_directory() . $logo;
-	$logo_URL = get_template_directory_uri() . $logo;
+	$possible_logos = array(
+		'/images/sprites/common-1x/logo.png',
+		'/images/sprites/common-compatibility/logo.png',
+		'/images/logo.png',
+		'/logo.png'
+	);
+
+	// Find the logo!
+	foreach ( $possible_logos as $option ) {
+		if ( file_exists( get_template_directory() . $option ) ) {
+			$logo = $option;
+			break;
+		}
+	}
 
 	// If the logo exists, do some admin CSS
-	if ( file_exists($logo_path) ):
+	if ( $logo ):
 
 		// Get the image dimensions
-		$logo_dimensions = getimagesize($logo_path);
+		$logo_dimensions = getimagesize(get_template_directory() . $logo);
 		$logo_height = isset($logo_dimensions[1]) ? $logo_dimensions[1] : '92';
 		$logo_height = $logo_height . 'px';
 
@@ -27,7 +40,7 @@ function d7_custom_login_logo() {
 
 		<style type="text/css">
 			.login h1 a {
-				background-image:url('<?php echo $logo_URL; ?>');
+				background-image:url('<?php echo get_template_directory_uri() . $logo; ?>');
 				height: <?php echo $logo_height; ?>;
 				width: auto;
 				margin-bottom: 0;
