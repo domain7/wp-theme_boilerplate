@@ -5,7 +5,6 @@
  * should the CDN fail. The code is adapted from https://gist.github.com/wpsmith/4083811.
  * Then we load basic styles.
  */
-
 add_action( 'wp_enqueue_scripts', 'd7_enqueue_jquery' );
 
 /**
@@ -36,6 +35,9 @@ add_action( 'wp_enqueue_scripts', 'd7_enqueue_jquery' );
  * @uses wp_enqueue_script()    Enqueues javascript.
  */
 function d7_enqueue_jquery() {
+
+	$script_location = 'js/main.js';
+
 	// Setup Google URI, default
 	$protocol = ( isset( $_SERVER['HTTPS'] ) && 'on' == $_SERVER['HTTPS'] ) ? 'https' : 'http';
 	// Get Latest Version
@@ -90,7 +92,7 @@ function d7_enqueue_jquery() {
 	wp_enqueue_script( 'jquery' );
 
 	// Now load basic site js
-	wp_enqueue_script('basic', get_bloginfo('template_directory').'/js/main.js', array('jquery'), '1.0');
+	wp_enqueue_script('basic', get_bloginfo('template_directory') . '/' . $script_location , array('jquery'), '1.0');
 
 	// Add some site information to a WP js object
 	$wp_object = array(
