@@ -7,6 +7,7 @@ foreach (glob(dirname(__FILE__) . '/includes/template_functions/*.php') as $file
 
 // Includes
 include_once 'includes/theme_setup.php'; // stylesheet_uri, after_setup_theme, cleanup head
+include_once 'includes/customizer.php';
 // include_once 'includes/sidebars.php'; // core sidebar registration
 include_once 'includes/menus.php'; // core menu registration
 include_once 'includes/sub_menu.php'; // sub menu hook
