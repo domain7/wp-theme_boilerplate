@@ -75,7 +75,9 @@ function d7_body_classes($classes, $class='') {
 	}
 
 	// Classes for sidebars
-	$classes[] = d7_sidebar_classes();
+	if ( function_exists('d7_sidebar_classes') ) {
+		$classes[] = d7_sidebar_classes();
+	}
 
 	return $classes;// return the $classes array
 }
