@@ -104,7 +104,7 @@ function d7_enqueue_jquery() {
 		'currentTheme' => get_current_theme(),
 		'url' => get_bloginfo('url'),
 	);
-	wp_localize_script('basic', 'WP', $wp_object);
+	wp_localize_script('basic', 'D7WP', $wp_object);
 
 
 	// For comment reply form
