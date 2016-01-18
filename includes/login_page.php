@@ -14,6 +14,7 @@ function d7_custom_login_logo() {
 
 	// Create the URL of the logo
 	$possible_logos = array(
+		'/images/logo-login.png',
 		'/images/sprites/common-1x/logo.png',
 		'/images/sprites/common-compatibility/logo.png',
 		'/images/logo.png',
