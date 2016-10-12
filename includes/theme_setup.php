@@ -36,7 +36,7 @@ function d7_theme_setup() {
  *
  */
 function d7_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
-	return $stylesheet_dir_uri . '/stylesheets/css/screen.css';
+	return $stylesheet_dir_uri . '/stylesheets/css/style.css';
 }
 
 /**

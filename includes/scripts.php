@@ -15,8 +15,10 @@ add_action( 'wp_enqueue_scripts', 'd7_enqueue_scripts' );
  * @uses wp_enqueue_script()    Enqueues javascript.
  */
 function d7_enqueue_scripts() {
-	$script_location = 'js/main.js';
-	wp_enqueue_script('basic', get_bloginfo('template_directory') . '/' . $script_location , array('jquery'), '1.0');
+
+	wp_enqueue_script('basic-head', get_bloginfo('template_directory') . '/js/dist/application-head.js' , array('jquery'), '1.0', false);
+
+	wp_enqueue_script('basic', get_bloginfo('template_directory') . '/js/dist/application.js' , array('jquery'), '1.0', true);
 
 	$wp_object = array(
 		'templateUrl' => get_bloginfo('template_url'),
